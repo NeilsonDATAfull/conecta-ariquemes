@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GABNET - PORTAL CIDADÃO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F82ED", secondary: "#4A4A4A" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style></style>
+  </head>
+  <body class="bg-white">
+    <header class="relative">
+      <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-16">
+            <div class="flex items-center">
+              <div class="text-2xl text-primary">Gabnet</div>
+              <div class="hidden md:flex space-x-8 ml-10">
+                <a href="#" class="text-gray-600 hover:text-primary">Início</a>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Produtos</a
+                >
+                <a href="#" class="text-gray-600 hover:text-primary">Sobre</a>
+                <a href="#" class="text-gray-600 hover:text-primary">Contato</a>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary cursor-pointer"
+              >
+                <i class="ri-moon-line text-xl"></i>
+              </div>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary cursor-pointer"
+              >
+                <i class="ri-user-line text-xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="relative bg-cover bg-center h-[400px]"
+        style="
+          background-image: linear-gradient(
+              rgba(44, 107, 243, 0.6),
+              rgba(2, 119, 41, 0.3)
+            ),
+            url('bgcartoon-ariquemes.png');
+        "
+      >
+        <div class="max-w-7xl mx-auto px-4 h-full flex items-center">
+          <div class="text-center mx-auto max-w-2xl">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
+              Portal do Cidadão Ariquemes
+            </h1>
+            <p class="text-xl text-white/90 mb-8">
+              Seu espaço para acompanhar a atuação da Câmara Municipal
+            </p>
+            <a
+              href="#"
+              class="inline-block px-8 py-3 bg-white text-primary font-medium rounded-button hover:bg-white/90 transition-colors duration-200"
+            >
+              Acessar
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">Acesso Rápido</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://images.pexels.com/photos/1709003/pexels-photo-1709003.jpeg"
+                alt="Eleições"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-gray-900">Eleições</h3>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://images.pexels.com/photos/1550342/pexels-photo-1550342.jpeg"
+                alt="Congresso"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-gray-900">Congresso</h3>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+                alt="Debate"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3 class="text-xl font-semibold text-gray-900">Debate</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative rounded-lg overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/6321080/pexels-photo-6321080.jpeg"
+                alt="Câmara Municipal"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <h3 class="text-2xl font-bold text-white mb-4">
+                    Câmara Municipal
+                  </h3>
+                  <a
+                    href="https://camaradeariquemes.ro.gov.br/"
+                    target="_blank"
+                    title="Câmara Municipal de Ariquemes"
+                    class="inline-flex items-center bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90"
+                    ><i class="ri-link mr-2"></i>Acessar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="relative rounded-lg overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/8828441/pexels-photo-8828441.jpeg"
+                alt="Prefeitura"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <h3 class="text-2xl font-bold text-white mb-4">Prefeitura</h3>
+                  <a
+                    href="https://ariquemes.ro.gov.br/"
+                    target="_blank"
+                    title="Prefeitura de Ariquemes"
+                    class="inline-flex items-center bg-primary text-white px-6 py-2 rounded-button hover:bg-primary/90"
+                    ><i class="ri-link mr-2"></i>Acessar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">
+              Produtos em Destaque
+            </h2>
+            <!-- <div class="flex space-x-4">
+            <button class="text-gray-600 hover:text-primary">Todos</button>
+            <button class="text-gray-600 hover:text-primary">Cadeiras</button>
+            <button class="text-gray-600 hover:text-primary">Sofás</button>
+            <button class="text-gray-600 hover:text-primary">Mesas</button>
+          </div> -->
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/f6498a12734befa95a42bf4964d599ea.jpg"
+                  alt="Poltrona Moderna"
+                  class="w-full h-48 object-cover"
+                />
+                <span
+                  class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm"
+                  >-20%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Poltrona Moderna
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-primary font-bold">R$ 899,00</span>
+                  <span class="ml-2 text-sm text-gray-500 line-through"
+                    >R$ 1.099,00</span
+                  >
+                </div>
+                <div class="flex items-center mt-2">
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-half-fill text-yellow-400"></i>
+                  <span class="ml-2 text-sm text-gray-500">(4.5)</span>
+                </div>
+              </div>
+            </a>
+            <!-- Repetir estrutura para mais 7 produtos -->
+            <!-- Produto 2 -->
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/b9b17772fdb36347841210134bdc5b23.jpg"
+                  alt="Cadeira de Jantar"
+                  class="w-full h-48 object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Cadeira de Jantar
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-primary font-bold">R$ 499,00</span>
+                </div>
+                <div class="flex items-center mt-2">
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-line text-yellow-400"></i>
+                  <span class="ml-2 text-sm text-gray-500">(4.0)</span>
+                </div>
+              </div>
+            </a>
+            <!-- Produto 3 -->
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/2fe5f41ef132e48c75ac1847615050dc.jpg"
+                  alt="Mesa de Centro"
+                  class="w-full h-48 object-cover"
+                />
+                <span
+                  class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-sm"
+                  >Novo</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Mesa de Centro
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-primary font-bold">R$ 799,00</span>
+                </div>
+                <div class="flex items-center mt-2">
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <span class="ml-2 text-sm text-gray-500">(5.0)</span>
+                </div>
+              </div>
+            </a>
+            <!-- Produto 4 -->
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/ea3c65c2d84e0c35e73973252ac76ace.jpg"
+                  alt="Luminária Pendente"
+                  class="w-full h-48 object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Luminária Pendente
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-primary font-bold">R$ 299,00</span>
+                </div>
+                <div class="flex items-center mt-2">
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-half-fill text-yellow-400"></i>
+                  <i class="ri-star-line text-yellow-400"></i>
+                  <span class="ml-2 text-sm text-gray-500">(3.5)</span>
+                </div>
+              </div>
+            </a>
+            <!-- Produto 5 -->
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/f337093ca2628c211c7ec25a35537306.jpg"
+                  alt="Estante Moderna"
+                  class="w-full h-48 object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Estante Moderna
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-primary font-bold">R$ 1.299,00</span>
+                </div>
+                <div class="flex items-center mt-2">
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-line text-yellow-400"></i>
+                  <span class="ml-2 text-sm text-gray-500">(4.0)</span>
+                </div>
+              </div>
+            </a>
+            <!-- Produto 6 -->
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/7fc82e3aec4376d2f600315ed8945dd5.jpg"
+                  alt="Mesa Lateral"
+                  class="w-full h-48 object-cover"
+                />
+                <span
+                  class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm"
+                  >-15%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Mesa Lateral
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-primary font-bold">R$ 399,00</span>
+                  <span class="ml-2 text-sm text-gray-500 line-through"
+                    >R$ 469,00</span
+                  >
+                </div>
+                <div class="flex items-center mt-2">
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-half-fill text-yellow-400"></i>
+                  <span class="ml-2 text-sm text-gray-500">(4.5)</span>
+                </div>
+              </div>
+            </a>
+            <!-- Produto 7 -->
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/dfe4ed543a77aeb7ab59e9480c953867.jpg"
+                  alt="Relógio de Parede"
+                  class="w-full h-48 object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Relógio de Parede
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-primary font-bold">R$ 199,00</span>
+                </div>
+                <div class="flex items-center mt-2">
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-line text-yellow-400"></i>
+                  <span class="ml-2 text-sm text-gray-500">(4.0)</span>
+                </div>
+              </div>
+            </a>
+            <!-- Produto 8 -->
+            <a
+              href="#"
+              class="block bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/c0bb26620c8655f8df97eaa4816f390c.jpg"
+                  alt="Luminária de Piso"
+                  class="w-full h-48 object-cover"
+                />
+                <span
+                  class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-sm"
+                  >Novo</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Luminária de Piso
+                </h3>
+                <div class="flex items-center mt-2">
+                  <span class="text-primary font-bold">R$ 599,00</span>
+                </div>
+                <div class="flex items-center mt-2">
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <i class="ri-star-fill text-yellow-400"></i>
+                  <span class="ml-2 text-sm text-gray-500">(5.0)</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-blue-50">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="text-2xl text-primary mb-4">Gabnet</div>
+            <p class="text-gray-600">
+              Portal do Cidadão é uma plataforma de serviços e informações do
+              município de Ariquemes-RO.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+              Links Rápidos
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary"
+                  >Sobre Nós</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">Contato</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-primary">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+              Localização
+            </h3>
+            <ul class="space-y-2">
+              <li class="flex items-center text-gray-600">
+                <i class="ri-map-pin-line mr-2"></i>
+                Rua Cassiterita, 1.369 - Centro - Ariquemes - RO
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="ri-phone-line mr-2"></i>
+                (69) 3536-6103 / 3535-3261
+              </li>
+              <li class="flex items-center text-gray-600">
+                <i class="ri-mail-line mr-2"></i>
+                contato@moveis.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-200">
+          <p class="text-center text-gray-600">
+            &copy; 2025 GABNET. Desenvolvido por
+            <a
+              href="https://www.datafull.com.br/"
+              target="_blank"
+              class="text-primary hover:underline"
+              >DATAfull</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
