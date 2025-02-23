@@ -46,19 +46,21 @@
             <div class="flex items-center">
               <div class="text-2xl text-primary">Gabnet</div>
               <div class="hidden md:flex space-x-8 ml-10">
-                <a href="#" class="text-gray-600 hover:text-primary">Início</a>
-                <a href="#" class="text-gray-600 hover:text-primary">Sobre</a>
-                <a href="#" class="text-gray-600 hover:text-primary">Contato</a>
+                <a href="portal.html" class="text-gray-900 hover:text-primary"
+                  >Início</a
+                >
+                <a href="#" class="text-gray-900 hover:text-primary">Sobre</a>
+                <a href="#" class="text-gray-900 hover:text-primary">Contato</a>
               </div>
             </div>
             <div class="flex items-center space-x-4">
               <div
-                class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary cursor-pointer"
+                class="w-8 h-8 flex items-center justify-center text-gray-900 hover:text-primary cursor-pointer"
               >
                 <i class="ri-moon-line text-xl"></i>
               </div>
               <div
-                class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary cursor-pointer"
+                class="w-8 h-8 flex items-center justify-center text-gray-900 hover:text-primary cursor-pointer"
               >
                 <i class="ri-user-line text-xl"></i>
               </div>
@@ -67,13 +69,13 @@
         </div>
       </nav>
       <div
-        class="relative bg-cover bg-center h-[400px]"
+        class="relative bg-cover bg-center h-[300px]"
         style="
           background-image: linear-gradient(
               rgba(44, 107, 243, 0.6),
               rgba(2, 119, 41, 0.3)
             ),
-            url('bgcartoon-ariquemes.png');
+            url('src/images/bgcartoon-ariquemes.png');
         "
       >
         <div class="max-w-7xl mx-auto px-4 h-full flex items-center">
@@ -81,15 +83,15 @@
             <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
               Portal do Cidadão Ariquemes
             </h1>
-            <p class="text-xl text-white/90 mb-8">
+            <p class="text-xl text-white/90 mb-3">
               Seu espaço para acompanhar a atuação da Câmara Municipal
             </p>
-            <a
-              href="#"
+            <!-- <a
+              href="portal-diaria.html"
               class="inline-block px-8 py-3 bg-white text-primary font-medium rounded-button hover:bg-white/90 transition-colors duration-200"
             >
               Acessar
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
@@ -101,6 +103,35 @@
             Detalhamento da Diária
           </h2>
         </div>
+      </section>
+      <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!--Breadcrumbs-->
+        <ol class="flex items-center justify-end whitespace-nowrap min-w-0">
+          <li class="text-sm">
+            <a
+              class="flex items-center text-primary hover:text-primary dark:text-primary"
+              href="portal.html"
+            >
+              <i class="ri-home-2-line mt-1 mr-2"></i>
+              Início
+            </a>
+          </li>
+          <li class="text-sm">
+            <a
+              class="flex items-center text-primary hover:text-primary dark:text-primary"
+              href="portal-diaria.html"
+            >
+              <i class="ri-arrow-right-s-line mt-1 px-4"></i>
+              Diárias
+            </a>
+          </li>
+          <li
+            class="text-sm flex items-center !text-gray-500 hover:text-primary dark:text-primary"
+          >
+            <i class="ri-arrow-right-s-line mt-1 px-4"></i>
+            Detalhes
+          </li>
+        </ol>
       </section>
       <section class="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-lg shadow-lg p-6">
@@ -303,7 +334,7 @@
         </div>
       </section>
     </main>
-    <footer class="bg-blue-50">
+    <footer class="bg-blue-100">
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
