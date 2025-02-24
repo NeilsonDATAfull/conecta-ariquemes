@@ -52,21 +52,21 @@
             <div class="flex items-center">
               <div class="text-2xl text-primary">Gabnet</div>
               <div class="hidden md:flex space-x-8 ml-10">
-                <a href="portal.html" class="text-gray-900 hover:text-primary"
+                <a href="portal.html" class="text-primary hover:text-primary"
                   >Início</a
                 >
-                <a href="#" class="text-gray-900 hover:text-primary">Sobre</a>
-                <a href="#" class="text-gray-900 hover:text-primary">Contato</a>
+                <a href="#" class="text-primary hover:text-primary">Sobre</a>
+                <a href="#" class="text-primary hover:text-primary">Contato</a>
               </div>
             </div>
             <div class="flex items-center space-x-4">
               <div
-                class="w-8 h-8 flex items-center justify-center text-gray-900 hover:text-primary cursor-pointer"
+                class="w-8 h-8 flex items-center justify-center text-primary hover:text-primary cursor-pointer"
               >
                 <i class="ri-moon-line text-xl"></i>
               </div>
               <div
-                class="w-8 h-8 flex items-center justify-center text-gray-900 hover:text-primary cursor-pointer"
+                class="w-8 h-8 flex items-center justify-center text-primary hover:text-primary cursor-pointer"
               >
                 <i class="ri-user-line text-xl"></i>
               </div>
@@ -78,8 +78,8 @@
         class="relative bg-cover bg-center h-[300px]"
         style="
           background-image: linear-gradient(
-              rgba(44, 107, 243, 0.6),
-              rgba(2, 119, 41, 0.3)
+              rgba(16, 80, 199, 0.7),
+              rgba(5, 123, 235, 0.4)
             ),
             url('src/images/bgcartoon-ariquemes.jpg');
         "
@@ -90,13 +90,13 @@
               class="text-5xl md:text-6xl font-extrabold text-white mb-6"
               style="text-shadow: 2px 2px #333"
             >
-              Portal do Cidadão Ariquemes
+              Conecta Ariquemes
             </h1>
             <p
-              class="text-xl text-white/90 mb-3"
+              class="text-2xl text-white/90 mb-3"
               style="text-shadow: 1px 1px #333"
             >
-              Seu espaço para acompanhar a atuação da Câmara Municipal
+              Conectado a câmara de Vereadores de Ariquemes com você Cidadão
             </p>
             <!-- <a
               href="portal-diaria.html"
@@ -288,69 +288,87 @@
         </div>
       </section>
     </main>
-    <footer class="bg-blue-100">
+    <footer class="bg-[#0f59bf] text-white/80 py-12 hidden md:block">
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div class="text-2xl text-primary mb-4">Gabnet</div>
-            <p class="text-gray-600">
+            <div class="text-2xl mb-4">Gabnet</div>
+            <p class="">
               Portal do Cidadão é uma plataforma de serviços e informações do
               município de Ariquemes-RO.
             </p>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">
-              Links Rápidos
-            </h3>
+            <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
             <ul class="space-y-2">
               <li>
-                <a href="#" class="text-gray-600 hover:text-primary"
-                  >Sobre Nós</a
-                >
+                <a href="#" class="hover:text-black">Sobre Nós</a>
               </li>
               <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Contato</a>
+                <a href="#" class="hover:text-primary">Contato</a>
               </li>
               <li>
-                <a href="#" class="text-gray-600 hover:text-primary">Blog</a>
+                <a href="#" class="hover:text-primary">Blog</a>
               </li>
               <li>
-                <a href="#" class="text-gray-600 hover:text-primary">FAQ</a>
+                <a href="#" class="hover:text-primary">FAQ</a>
               </li>
             </ul>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">
-              Localização
-            </h3>
+            <h3 class="text-lg font-semibold mb-4">Localização</h3>
             <ul class="space-y-2">
-              <li class="flex items-center text-gray-600">
+              <li class="flex items-center0">
                 <i class="ri-map-pin-line mr-2"></i>
                 Rua Cassiterita, 1.369 - Centro - Ariquemes - RO
               </li>
-              <li class="flex items-center text-gray-600">
+              <li class="flex items-center">
                 <i class="ri-phone-line mr-2"></i>
                 (69) 3536-6103 / 3535-3261
               </li>
-              <li class="flex items-center text-gray-600">
+              <li class="flex items-center">
                 <i class="ri-mail-line mr-2"></i>
                 contato@moveis.com
               </li>
             </ul>
           </div>
         </div>
-        <div class="mt-8 pt-8 border-t border-gray-200">
-          <p class="text-center text-gray-600">
+        <div class="mt-8 pt-8 border-t border-b-white">
+          <p class="text-center">
             &copy; 2025 GABNET. Desenvolvido por
             <a
               href="https://www.datafull.com.br/"
               target="_blank"
-              class="text-primary hover:underline"
+              class="text-white hover:underline"
               >DATAfull</a
             >
           </p>
         </div>
       </div>
     </footer>
+    <!-- Mobile Bottom Navigation -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 bg-[#0f59bf] p-4 flex items-center justify-between md:hidden z-50"
+    >
+      <a href="#" class="text-white flex flex-col items-center">
+        <i class="ri-home-line text-4xl"></i>
+        <span class="text-xs mt-1">Início</span>
+      </a>
+      <a href="#" class="text-white flex flex-col items-center">
+        <i class="ri-calendar-line text-4xl"></i>
+        <span class="text-xs mt-1">Eventos</span>
+      </a>
+      <button class="bg-gradient-to-r from-[#086FDE] to-[#0F57CB] text-white p-4 rounded-full -mt-14 shadow-lg">
+        <i class="ri-search-line text-white text-4xl"></i>
+      </button>
+      <a href="#" class="text-white flex flex-col items-center">
+        <i class="ri-map-pin-line text-4xl"></i>
+        <span class="text-xs mt-1">Mapa</span>
+      </a>
+      <a href="#" class="text-white flex flex-col items-center">
+        <i class="ri-user-line text-4xl"></i>
+        <span class="text-xs mt-1">Entrar</span>
+      </a>
+    </nav>
   </body>
 </html>
