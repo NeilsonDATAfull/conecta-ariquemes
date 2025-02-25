@@ -46,11 +46,42 @@
   </head>
   <body class="bg-white">
     <header class="relative">
-      <nav class="bg-white shadow-sm">
+      <!-- Header Mobile -->
+      <nav class="bg-gradient-to-r from-[#0286f2] to-[#1544bd] md:hidden">
+        <div class="px-4 py-6">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center">
+              <img src="src/images/logo-white.svg" alt="Conecta Ariquemes Logo" class="h-8" />
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="w-8 h-8 flex items-center justify-center text-white cursor-pointer">
+                <i class="ri-notification-3-line text-xl"></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center text-white cursor-pointer">
+                <i class="ri-money-dollar-circle-line text-xl"></i>
+              </div>
+              <button id="mobile-menu-button" class="w-8 h-8 flex items-center justify-center text-white">
+                <i class="ri-menu-line text-2xl"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Menu Mobile (escondido por padrão) -->
+          <div id="mobile-menu" class="hidden mt-4 pb-2">
+            <div class="flex flex-col space-y-3 items-end">
+              <a href="portal.html" class="text-white hover:text-gray-200">Início</a>
+              <a href="#" class="text-white hover:text-gray-200">Sobre</a>
+              <a href="#" class="text-white hover:text-gray-200">Contato</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header Desktop -->
+      <nav class="bg-white shadow-sm hidden md:block">
         <div class="max-w-7xl mx-auto px-4">
           <div class="flex justify-between h-16">
             <div class="flex items-center">
-              <div class="text-2xl text-primary">Conecta Ariquemes</div>
+              <img src="src/images/logo.svg" alt="Conecta Ariquemes Logo" class="h-12" />
               <div class="hidden md:flex space-x-8 ml-10">
                 <a href="portal.html" class="text-[#0061e8] hover:text-primary"
                   >Início</a
@@ -77,7 +108,7 @@
         </div>
       </nav>
       <div
-        class="relative bg-cover bg-center h-[300px]"
+        class="relative bg-cover bg-center h-[300px] hidden md:block"
         style="
           background-image: linear-gradient(
               rgba(16, 80, 199, 0.7),
@@ -670,5 +701,17 @@
         <span class="text-xs mt-1">Entrar</span>
       </a>
     </nav>
+
+    <!-- Script para o menu mobile -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      });
+    </script>
   </body>
 </html>
