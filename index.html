@@ -196,8 +196,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 110%;
+        height: 110%;
         background-color: rgba(2, 133, 240, 0.85);
         display: flex;
         flex-direction: column;
@@ -205,7 +205,7 @@
         align-items: center;
         opacity: 0;
         transition: all 0.3s ease;
-        padding: 15px;
+        padding: 10px;
         text-align: center;
         pointer-events: none; /* Evita que o overlay receba eventos de mouse */
       }
@@ -220,7 +220,7 @@
       .vereador-cargo {
         color: white;
         font-size: 0.875rem;
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
       }
       
       .vereador-social {
@@ -241,7 +241,7 @@
       .vereador-img-container:hover,
       .vereador-img-container:focus {
         border-radius: 10px;
-        transform: scale(1.1);
+        /* transform: scale(1.1); */
         z-index: 10;
       }
       
@@ -278,32 +278,16 @@
         /* Cor de fundo mais visível para o overlay em mobile */
         .vereador-img-container.touch-active .vereador-overlay {
           background-color: rgba(2, 133, 240, 0.95);
-          opacity: 1 !important; /* Forçar visibilidade */
-          border: 2px solid white; /* Adicionar borda para melhor visualização */
-          padding: 12px; /* Aumentar o padding interno para evitar corte de texto */
+          padding: 10px !important; /* Aumentar o padding interno para evitar corte de texto */
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
         }
         
-        /* Garantir que o overlay apareça acima de outros elementos */
-        .vereador-img-container.touch-active {
-          position: relative;
-          z-index: 100; /* Valor mais alto para prioridade máxima */
-          border-radius: 12px !important;
-          transform: scale(1.4) !important; /* Aumentar escala para mais espaço */
-          box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Sombra para destacar */
-          margin: 5px !important; /* Adicionar margem para evitar sobreposição */
-        }
         
-        /* Melhorar espaçamento dos ícones sociais em modo toque */
-        .vereador-img-container.touch-active .vereador-social {
-          display: flex;
-          gap: 15px;
-          margin-top: 5px;
-          justify-content: center;
-        }
+        
+        
         
         /* Ajustes para o item do carrossel que contém o vereador ativo */
         .owl-item .item:has(.vereador-img-container.touch-active) {
@@ -312,27 +296,9 @@
           overflow: visible;
         }
         
-        /* Cores mais vibrantes para texto no overlay */
-        .vereador-img-container.touch-active .vereador-nome,
-        .vereador-img-container.touch-active .vereador-cargo {
-          text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-          font-weight: bold;
-          width: 100%;
-          text-align: center;
-        }
         
-        /* Ícones mais visíveis */
-        .vereador-img-container.touch-active .vereador-link {
-          transform: scale(1.2);
-          font-size: 1.6rem;
-          background-color: rgba(255, 255, 255, 0.2);
-          border-radius: 50%;
-          width: 30px;
-          height: 30px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+        
+        
       }
       
       /* Ajuste para a navegação do carrossel de vereadores */
@@ -411,13 +377,14 @@
       
       @media (max-width: 480px) {
         .vereador-card {
+          z-index: 1000;
           max-width: 95px;
           padding: 3px;
         }
         
         .vereador-img-container {
-          width: 85px;
-          height: 85px;
+          width: 95px;
+          height: 95px;
         }
         
         /* Ajuste maior para efeito de hover em telas muito pequenas */
@@ -435,7 +402,7 @@
         
         /* Ampliar o overlay para garantir que todo conteúdo seja visível */
         .vereador-img-container.touch-active .vereador-overlay {
-          padding: 10px !important; /* Mais padding para telas menores */
+          padding: 20px !important; /* Mais padding para telas menores */
           display: flex !important;
           flex-direction: column !important;
           justify-content: center !important;
@@ -459,8 +426,8 @@
         
         /* Melhorar espaçamento dos ícones sociais em telas pequenas */
         .vereador-img-container.touch-active .vereador-social {
-          gap: 12px !important;
-          margin-top: 4px !important;
+          gap: 8px !important;
+          margin-top: 0px !important;
         }
         
         /* Fazer ícones um pouco menores em telas muito pequenas */
