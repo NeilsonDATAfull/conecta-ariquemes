@@ -15,6 +15,11 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- Owl Carousel 2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -46,6 +51,65 @@
       @media (max-width: 768px) {
         body {
           padding-bottom: 60px; /* Espaço para o menu de navegação inferior */
+        }
+      }
+      
+      /* Estilos para o Owl Carousel */
+      .owl-carousel .owl-nav button.owl-prev,
+      .owl-carousel .owl-nav button.owl-next {
+        width: 40px;
+        height: 40px;
+        background-color: white !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 50%;
+        position: relative;
+        display: inline-block;
+        margin: 0 10px;
+      }
+      
+      .categorias-carousel .owl-nav,
+      .servicos-carousel .owl-nav {
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      .owl-carousel .owl-nav button i {
+        color: #4F82ED;
+      }
+      
+      .owl-carousel .owl-dots .owl-dot span {
+        background-color: #d9e1f8;
+      }
+      
+      .owl-carousel .owl-dots .owl-dot.active span {
+        background-color: #4F82ED;
+      }
+      
+      /* Ajustes para altura uniforme dos itens nos carrosséis */
+      .categorias-carousel .item,
+      .servicos-carousel .item {
+        height: 100%;
+      }
+      
+      .categorias-carousel .item a,
+      .servicos-carousel .item a {
+        height: 120px; /* Altura fixa para todos os itens */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Ajuste para mobile */
+      @media (max-width: 768px) {
+        .noticias-carousel .owl-nav button.owl-prev {
+          left: -10px;
+          position: absolute;
+        }
+        
+        .noticias-carousel .owl-nav button.owl-next {
+          right: -10px;
+          position: absolute;
         }
       }
     </style>
@@ -185,14 +249,16 @@
           <h2 class="text-3xl font-bold text-gray-800 md:text-white mb-8 text-center">
             Categorias de Serviços
           </h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+          
+          <!-- Grid para desktop -->
+          <div class="hidden md:grid md:grid-cols-4 lg:grid-cols-6 gap-6">
             <!-- Administração Pública -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-team-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <i class="ri-team-line text-4xl mb-4" style="color: #057ae8"></i>
+              <h3 class="text-base font-semibold text-gray-800">
                 Administração Pública
               </h3>
             </a>
@@ -200,13 +266,13 @@
             <!-- Cultura e Lazer -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-palette-line text-3xl md:text-4xl mb-3 md:mb-4"
+                class="ri-palette-line text-4xl mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <h3 class="text-base font-semibold text-gray-800">
                 Cultura e Lazer
               </h3>
             </a>
@@ -214,10 +280,10 @@
             <!-- Esportes e Bem-Estar -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-run-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <i class="ri-run-line text-4xl mb-4" style="color: #057ae8"></i>
+              <h3 class="text-base font-semibold text-gray-800">
                 Esportes e Bem-Estar
               </h3>
             </a>
@@ -225,10 +291,10 @@
             <!-- Meio Ambiente -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-plant-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <i class="ri-plant-line text-4xl mb-4" style="color: #057ae8"></i>
+              <h3 class="text-base font-semibold text-gray-800">
                 Meio Ambiente
               </h3>
             </a>
@@ -236,13 +302,13 @@
             <!-- Pessoa Jurídica e Autônomo -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-briefcase-line text-3xl md:text-4xl mb-3 md:mb-4"
+                class="ri-briefcase-line text-4xl mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <h3 class="text-base font-semibold text-gray-800">
                 Pessoa Jurídica e Autônomo
               </h3>
             </a>
@@ -250,13 +316,13 @@
             <!-- Trabalho e Qualificação -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-graduation-cap-line text-3xl md:text-4xl mb-3 md:mb-4"
+                class="ri-graduation-cap-line text-4xl mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <h3 class="text-base font-semibold text-gray-800">
                 Trabalho e Qualificação
               </h3>
             </a>
@@ -264,13 +330,13 @@
             <!-- Animais -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-service-line text-3xl md:text-4xl mb-3 md:mb-4"
+                class="ri-service-line text-4xl mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <h3 class="text-base font-semibold text-gray-800">
                 Animais
               </h3>
             </a>
@@ -278,13 +344,13 @@
             <!-- Desenvolvimento Econômico -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-line-chart-line text-3xl md:text-4xl mb-3 md:mb-4"
+                class="ri-line-chart-line text-4xl mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <h3 class="text-base font-semibold text-gray-800">
                 Desenv. Econômico
               </h3>
             </a>
@@ -292,13 +358,13 @@
             <!-- Imóveis -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-home-4-line text-3xl md:text-4xl mb-3 md:mb-4"
+                class="ri-home-4-line text-4xl mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <h3 class="text-base font-semibold text-gray-800">
                 Imóveis
               </h3>
             </a>
@@ -306,10 +372,10 @@
             <!-- Mobilidade -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-bus-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <i class="ri-bus-line text-4xl mb-4" style="color: #057ae8"></i>
+              <h3 class="text-base font-semibold text-gray-800">
                 Mobilidade
               </h3>
             </a>
@@ -317,13 +383,13 @@
             <!-- Saúde -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-heart-pulse-line text-3xl md:text-4xl mb-3 md:mb-4"
+                class="ri-heart-pulse-line text-4xl mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <h3 class="text-base font-semibold text-gray-800">
                 Saúde
               </h3>
             </a>
@@ -331,145 +397,190 @@
             <!-- Transparência -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-file-list-3-line text-3xl md:text-4xl mb-3 md:mb-4"
+                class="ri-file-list-3-line text-4xl mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <h3 class="text-base font-semibold text-gray-800">
                 Transparência
               </h3>
             </a>
-
-            <!-- Cidadania -->
-            <a
-              href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
-            >
-              <i class="ri-group-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
-                Cidadania
-              </h3>
-            </a>
-
-            <!-- Educação -->
-            <a
-              href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
-            >
-              <i
-                class="ri-book-open-line text-3xl md:text-4xl mb-3 md:mb-4"
-                style="color: #057ae8"
-              ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
-                Educação
-              </h3>
-            </a>
-
-            <!-- Licenças, Alvarás e Permissões -->
-            <a
-              href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
-            >
-              <i
-                class="ri-file-paper-2-line text-3xl md:text-4xl mb-3 md:mb-4"
-                style="color: #057ae8"
-              ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
-                Licenças e Alvarás
-              </h3>
-            </a>
-
-            <!-- Ouvidoria e Denúncias -->
-            <a
-              href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
-            >
-              <i
-                class="ri-customer-service-2-line text-3xl md:text-4xl mb-3 md:mb-4"
-                style="color: #057ae8"
-              ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
-                Ouvidoria e Denúncias
-              </h3>
-            </a>
-
-            <!-- Serviços Urbanos -->
-            <a
-              href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
-            >
-              <i
-                class="ri-community-line text-3xl md:text-4xl mb-3 md:mb-4"
-                style="color: #057ae8"
-              ></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
-                Serviços Urbanos
-              </h3>
-            </a>
           </div>
+          
+          <!-- Carrossel para mobile -->
+          <div class="md:hidden">
+            <div class="owl-carousel owl-theme categorias-carousel">
+              <!-- Administração Pública -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-team-line text-3xl mb-3" style="color: #057ae8"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">
+                    Administração Pública
+                  </h3>
+                </a>
+              </div>
+
+              <!-- Cultura e Lazer -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i
+                    class="ri-palette-line text-3xl mb-3"
+                    style="color: #057ae8"
+                  ></i>
+                  <h3 class="text-sm font-semibold text-gray-800">
+                    Cultura e Lazer
+                  </h3>
+                </a>
+              </div>
+
+              <!-- Esportes e Bem-Estar -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-run-line text-3xl mb-3" style="color: #057ae8"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">
+                    Esportes e Bem-Estar
+                  </h3>
+                </a>
+              </div>
+
+              <!-- Meio Ambiente -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-plant-line text-3xl mb-3" style="color: #057ae8"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">
+                    Meio Ambiente
+                  </h3>
+                </a>
+              </div>
+
+              <!-- Pessoa Jurídica e Autônomo -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i
+                    class="ri-briefcase-line text-3xl mb-3"
+                    style="color: #057ae8"
+                  ></i>
+                  <h3 class="text-sm font-semibold text-gray-800">
+                    Pessoa Jurídica e Autônomo
+                  </h3>
+                </a>
+              </div>
+
+              <!-- Trabalho e Qualificação -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i
+                    class="ri-graduation-cap-line text-3xl mb-3"
+                    style="color: #057ae8"
+                  ></i>
+                  <h3 class="text-sm font-semibold text-gray-800">
+                    Trabalho e Qualificação
+                  </h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </section>
       <section class="py-16 bg-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="text-2xl font-bold mb-8 text-center">Conecta Notícias</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div
-              class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              <img
-                src="src/images/noticias/IMG_1.jpg"
-                alt="Evento Cultural"
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6">
-                <h3 class="font-semibold mb-2">
-                  Vereadores participam do Encontro Regional de Ovinocultores de
-                  Rondônia
-                </h3>
-                <p class="text-gray-600 mb-4">20 Fevereiro 2025</p>
-                <button class="text-primary hover:underline !rounded-button">
-                  Saiba mais
-                </button>
+          <div class="owl-carousel owl-theme noticias-carousel">
+            <div class="item">
+              <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                <img
+                  src="src/images/noticias/IMG_1.jpg"
+                  alt="Evento Cultural"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="font-semibold mb-2">
+                    Vereadores participam do Encontro Regional de Ovinocultores de
+                    Rondônia
+                  </h3>
+                  <p class="text-gray-600 mb-4">20 Fevereiro 2025</p>
+                  <button class="text-primary hover:underline !rounded-button">
+                    Saiba mais
+                  </button>
+                </div>
               </div>
             </div>
-            <div
-              class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              <img
-                src="src/images/noticias/IMG_2.jpg"
-                alt="Evento Esportivo"
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6">
-                <h3 class="font-semibold mb-2">
-                  Vereadores aprovam cinco proposituras durante a Sessão
-                  Ordinária
-                </h3>
-                <p class="text-gray-600 mb-4">18 Fevereiro 2025</p>
-                <button class="text-primary hover:underline !rounded-button">
-                  Saiba mais
-                </button>
+            <div class="item">
+              <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                <img
+                  src="src/images/noticias/IMG_2.jpg"
+                  alt="Evento Esportivo"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="font-semibold mb-2">
+                    Vereadores aprovam cinco proposituras durante a Sessão
+                    Ordinária
+                  </h3>
+                  <p class="text-gray-600 mb-4">18 Fevereiro 2025</p>
+                  <button class="text-primary hover:underline !rounded-button">
+                    Saiba mais
+                  </button>
+                </div>
               </div>
             </div>
-            <div
-              class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              <img
-                src="src/images/noticias/IMG_3.jpg"
-                alt="Evento Tecnológico"
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6">
-                <h3 class="font-semibold mb-2">
-                  Vereadores definem composição das Comissões Permanentes para
-                  2025
-                </h3>
-                <p class="text-gray-600 mb-4">04 Fevereiro 2025</p>
-                <button class="text-primary hover:underline !rounded-button">
-                  Saiba mais
-                </button>
+            <div class="item">
+              <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                <img
+                  src="src/images/noticias/IMG_3.jpg"
+                  alt="Evento Tecnológico"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="font-semibold mb-2">
+                    Vereadores definem composição das Comissões Permanentes para
+                    2025
+                  </h3>
+                  <p class="text-gray-600 mb-4">04 Fevereiro 2025</p>
+                  <button class="text-primary hover:underline !rounded-button">
+                    Saiba mais
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Nova notícia adicional -->
+            <div class="item">
+              <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+                <img
+                  src="src/images/noticias/IMG_1.jpg"
+                  alt="Notícia adicional"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="font-semibold mb-2">
+                    Câmara promove audiência pública sobre segurança municipal
+                  </h3>
+                  <p class="text-gray-600 mb-4">15 Fevereiro 2025</p>
+                  <button class="text-primary hover:underline !rounded-button">
+                    Saiba mais
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -483,41 +594,43 @@
               Serviços ao Cidadão
             </h2>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+          
+          <!-- Grid para desktop -->
+          <div class="hidden md:grid md:grid-cols-4 lg:grid-cols-5 gap-6">
             <!-- Criança -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-team-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">Criança</h3>
+              <i class="ri-team-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">Criança</h3>
             </a>
 
             <!-- Jovem -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-group-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">Jovem</h3>
+              <i class="ri-group-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">Jovem</h3>
             </a>
 
             <!-- Servidor(a) -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-user-settings-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">Servidor(a)</h3>
+              <i class="ri-user-settings-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">Servidor(a)</h3>
             </a>
 
             <!-- Empreendedor(a) -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-shake-hands-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <i class="ri-shake-hands-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">
                 Empreendedor(a)
               </h3>
             </a>
@@ -525,46 +638,46 @@
             <!-- Mulher -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-women-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">Mulher</h3>
+              <i class="ri-women-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">Mulher</h3>
             </a>
 
             <!-- Turista -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-camera-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">Turista</h3>
+              <i class="ri-camera-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">Turista</h3>
             </a>
 
             <!-- Idoso(a) -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-user-heart-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">Idoso(a)</h3>
+              <i class="ri-user-heart-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">Idoso(a)</h3>
             </a>
 
             <!-- PCD -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-wheelchair-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">PCD</h3>
+              <i class="ri-wheelchair-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">PCD</h3>
             </a>
 
             <!-- Tutor(a) de pet -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-service-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <i class="ri-service-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">
                 Tutor(a) de pet
               </h3>
             </a>
@@ -572,14 +685,99 @@
             <!-- Consultas públicas -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-file-list-3-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
-              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              <i class="ri-file-list-3-line text-4xl text-primary mb-4"></i>
+              <h3 class="text-base font-semibold text-gray-800">
                 Consultas públicas
               </h3>
             </a>
           </div>
+          
+          <!-- Carrossel para mobile -->
+          <div class="md:hidden">
+            <div class="owl-carousel owl-theme servicos-carousel">
+              <!-- Criança -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-team-line text-3xl text-primary mb-3"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">Criança</h3>
+                </a>
+              </div>
+
+              <!-- Jovem -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-group-line text-3xl text-primary mb-3"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">Jovem</h3>
+                </a>
+              </div>
+
+              <!-- Servidor(a) -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-user-settings-line text-3xl text-primary mb-3"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">Servidor(a)</h3>
+                </a>
+              </div>
+
+              <!-- Empreendedor(a) -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-shake-hands-line text-3xl text-primary mb-3"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">
+                    Empreendedor(a)
+                  </h3>
+                </a>
+              </div>
+
+              <!-- Mulher -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-women-line text-3xl text-primary mb-3"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">Mulher</h3>
+                </a>
+              </div>
+
+              <!-- Turista -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-camera-line text-3xl text-primary mb-3"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">Turista</h3>
+                </a>
+              </div>
+
+              <!-- Idoso(a) -->
+              <div class="item">
+                <a
+                  href="#"
+                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
+                >
+                  <i class="ri-user-heart-line text-3xl text-primary mb-3"></i>
+                  <h3 class="text-sm font-semibold text-gray-800">Idoso(a)</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </section>
       <section class="py-16 bg-blue-50">
@@ -696,12 +894,12 @@
       class="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#1544bd] to-[#0286f2] p-4 flex items-center justify-between md:hidden z-50"
     >
       <a href="#" class="text-white flex flex-col items-center">
-        <i class="ri-home-line text-4xl"></i>
+        <i class="ri-home-2-line text-4xl"></i>
         <span class="text-xs mt-1">Início</span>
       </a>
       <a href="#" class="text-white flex flex-col items-center">
-        <i class="ri-calendar-line text-4xl"></i>
-        <span class="text-xs mt-1">Eventos</span>
+        <i class="ri-news-line text-4xl"></i>
+        <span class="text-xs mt-1">Notícias</span>
       </a>
       <button
         class="bg-gradient-to-r from-[#086FDE] to-[#0F57CB] text-white p-4 rounded-full -mt-14 shadow-lg"
@@ -816,6 +1014,78 @@
             top: 0,
             behavior: 'smooth'
           });
+        });
+      });
+    </script>
+    
+    <!-- Script para o Owl Carousel -->
+    <script>
+      $(document).ready(function(){
+        $(".noticias-carousel").owlCarousel({
+          loop: true,
+          margin: 20,
+          nav: true,
+          dots: true,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          navText: [
+            "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
+            "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
+          ],
+          responsive: {
+            0: {
+              items: 1
+            },
+            600: {
+              items: 2
+            },
+            1000: {
+              items: 3
+            }
+          }
+        });
+        
+        // Carrossel de categorias (mobile)
+        $(".categorias-carousel").owlCarousel({
+          loop: true,
+          margin: 15,
+          nav: true,
+          dots: false,
+          autoplay: false,
+          navText: [
+            "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
+            "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
+          ],
+          responsive: {
+            0: {
+              items: 2
+            },
+            460: {
+              items: 3
+            }
+          }
+        });
+        
+        // Carrossel de serviços (mobile)
+        $(".servicos-carousel").owlCarousel({
+          loop: true,
+          margin: 15,
+          nav: true,
+          dots: false,
+          autoplay: false,
+          navText: [
+            "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
+            "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
+          ],
+          responsive: {
+            0: {
+              items: 2
+            },
+            460: {
+              items: 3
+            }
+          }
         });
       });
     </script>
