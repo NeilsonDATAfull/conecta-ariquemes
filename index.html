@@ -273,6 +273,50 @@
       
       .vereador-img-container.touch-active .vereador-overlay {
         opacity: 1;
+        pointer-events: auto; /* Permitir eventos nos elementos dentro do overlay */
+      }
+      
+      /* Melhorias específicas para touch em dispositivos móveis */
+      @media (max-width: 767px) {
+        /* Ajuste de animação para toque mais direto em mobile */
+        .vereador-img-container .vereador-overlay {
+          transition: opacity 0.15s ease; /* Transição mais rápida em mobile */
+        }
+        
+        /* Aumentar área de toque */
+        .vereador-link {
+          padding: 5px;
+          margin: 0 3px;
+        }
+        
+        /* Cor de fundo mais visível para o overlay em mobile */
+        .vereador-img-container.touch-active .vereador-overlay {
+          background-color: rgba(2, 133, 240, 0.95);
+          opacity: 1 !important; /* Forçar visibilidade */
+          border: 2px solid white; /* Adicionar borda para melhor visualização */
+        }
+        
+        /* Garantir que o overlay apareça acima de outros elementos */
+        .vereador-img-container.touch-active {
+          position: relative;
+          z-index: 100; /* Valor mais alto para prioridade máxima */
+          border-radius: 10px !important;
+          transform: scale(1.2) !important; /* Forçar escala maior */
+          box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Sombra para destacar */
+        }
+        
+        /* Cores mais vibrantes para texto no overlay */
+        .vereador-img-container.touch-active .vereador-nome,
+        .vereador-img-container.touch-active .vereador-cargo {
+          text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+          font-weight: bold;
+        }
+        
+        /* Ícones mais visíveis */
+        .vereador-img-container.touch-active .vereador-link {
+          transform: scale(1.2);
+          font-size: 1.6rem;
+        }
       }
       
       /* Ajuste para a navegação do carrossel de vereadores */
@@ -693,28 +737,43 @@
           </div>
         </div>
         
-        <!-- Script específico para suporte a toque na grid -->
+        <!-- Script específico para suporte a toque em dispositivos móveis -->
         <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            // Adicionar suporte para toque em dispositivos móveis
-            if('ontouchstart' in window) {
-              document.querySelectorAll('.vereador-img-container').forEach(function(item) {
-                item.addEventListener('touchstart', function(e) {
-                  // Prevenir o comportamento padrão do navegador para o toque
-                  e.preventDefault();
-                  
-                  // Remover classe ativa de todos os outros itens
-                  document.querySelectorAll('.vereador-img-container').forEach(function(innerItem) {
-                    if (innerItem !== item) {
-                      innerItem.classList.remove('touch-active');
-                    }
-                  });
-                  
-                  // Alternar a classe touch-active no item atual
-                  item.classList.toggle('touch-active');
-                });
-              });
-            }
+          $(document).ready(function() {
+            // Usando delegação de eventos com jQuery para melhor compatibilidade com Owl Carousel
+            $(document).on('touchstart', '.vereador-img-container', function(e) {
+              // Prevenir o comportamento padrão e a propagação
+              e.preventDefault();
+              e.stopPropagation();
+              
+              // Referência ao elemento atual
+              var $this = $(this);
+              
+              // Se já está ativo, apenas desativar
+              if ($this.hasClass('touch-active')) {
+                $this.removeClass('touch-active');
+                return;
+              }
+              
+              // Remover classe ativa de todos os outros elementos
+              $('.vereador-img-container').not(this).removeClass('touch-active');
+              
+              // Adicionar classe ativa ao elemento atual
+              $this.addClass('touch-active');
+              
+              // Parar o autoplay do carrossel
+              $('.vereadores-carousel').trigger('stop.owl.autoplay');
+              
+              // Logging para debug (remover em produção)
+              console.log('Toque ativado em vereador');
+            });
+            
+            // Adicionar evento para fechar ao tocar fora
+            $(document).on('touchstart', function(e) {
+              if (!$(e.target).closest('.vereador-img-container').length) {
+                $('.vereador-img-container').removeClass('touch-active');
+              }
+            });
           });
         </script>
       </div>
@@ -1392,6 +1451,11 @@
           autoplay: true,
           autoplayTimeout: 5000,
           autoplayHoverPause: true,
+          touchDrag: true,
+          mouseDrag: true,
+          touchThreshold: 10, // Aumentar o limite para considerar como arrasto
+          autoplayHoverPause: true, // Pausa no hover
+          autoplayTimeout: 8000, // Tempo maior entre slides para facilitar interação
           navText: [
             "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
             "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
@@ -1412,22 +1476,21 @@
             1200: {
               items: 6
             }
+          },
+          onInitialized: function() {
+            // Verificar se o carrossel está em uma tela de toque
+            if ('ontouchstart' in window) {
+              // Após inicialização, adiciona tratamento especial para os vereadores
+              $('.vereadores-carousel .owl-item').on('touchstart', function(e) {
+                // Se o toque for diretamente no container da imagem ou em seus filhos
+                if ($(e.target).closest('.vereador-img-container').length > 0) {
+                  // Pausa o autoplay
+                  $('.vereadores-carousel').trigger('stop.owl.autoplay');
+                }
+              });
+            }
           }
         });
-        
-        // Adicionar suporte para toque em dispositivos móveis
-        if('ontouchstart' in window) {
-          $('.vereador-img-container').on('touchstart', function(e) {
-            // Prevenir o comportamento padrão do navegador para o toque
-            e.preventDefault();
-            
-            // Remover classe ativa de todos os outros itens
-            $('.vereador-img-container').not(this).removeClass('touch-active');
-            
-            // Alternar a classe touch-active no item atual
-            $(this).toggleClass('touch-active');
-          });
-        }
         
         // Função para inicializar ou destruir carrosséis baseado no tamanho da tela
         function gerenciarCarrossel() {
