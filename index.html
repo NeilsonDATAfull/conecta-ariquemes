@@ -42,6 +42,12 @@
         padding: 0;
         margin: 0;
       }
+      
+      @media (max-width: 768px) {
+        body {
+          padding-bottom: 60px; /* Espaço para o menu de navegação inferior */
+        }
+      }
     </style>
   </head>
   <body class="bg-white">
@@ -176,19 +182,19 @@
           </div>
         </div>
       </section>
-      <section class="py-16" style="background-color: #134bc2">
+      <section class="py-16 bg-gray-100 md:bg-[#134bc2]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold text-white mb-8 text-center">
+          <h2 class="text-3xl font-bold text-gray-800 md:text-white mb-8 text-center">
             Categorias de Serviços
           </h2>
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
             <!-- Administração Pública -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-team-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-team-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Administração Pública
               </h3>
             </a>
@@ -196,13 +202,13 @@
             <!-- Cultura e Lazer -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-palette-line text-4xl mb-4"
+                class="ri-palette-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Cultura e Lazer
               </h3>
             </a>
@@ -210,10 +216,10 @@
             <!-- Esportes e Bem-Estar -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-run-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-run-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Esportes e Bem-Estar
               </h3>
             </a>
@@ -221,10 +227,10 @@
             <!-- Meio Ambiente -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-plant-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-plant-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Meio Ambiente
               </h3>
             </a>
@@ -232,13 +238,13 @@
             <!-- Pessoa Jurídica e Autônomo -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-briefcase-line text-4xl mb-4"
+                class="ri-briefcase-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Pessoa Jurídica e Autônomo
               </h3>
             </a>
@@ -246,13 +252,13 @@
             <!-- Trabalho e Qualificação -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-graduation-cap-line text-4xl mb-4"
+                class="ri-graduation-cap-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Trabalho e Qualificação
               </h3>
             </a>
@@ -260,25 +266,27 @@
             <!-- Animais -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-service-line text-4xl mb-4"
+                class="ri-service-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">Animais</h3>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+                Animais
+              </h3>
             </a>
 
             <!-- Desenvolvimento Econômico -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-line-chart-line text-4xl mb-4"
+                class="ri-line-chart-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Desenv. Econômico
               </h3>
             </a>
@@ -286,46 +294,52 @@
             <!-- Imóveis -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-home-4-line text-4xl mb-4"
+                class="ri-home-4-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">Imóveis</h3>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+                Imóveis
+              </h3>
             </a>
 
             <!-- Mobilidade -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-bus-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">Mobilidade</h3>
+              <i class="ri-bus-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+                Mobilidade
+              </h3>
             </a>
 
             <!-- Saúde -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-heart-pulse-line text-4xl mb-4"
+                class="ri-heart-pulse-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">Saúde</h3>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+                Saúde
+              </h3>
             </a>
 
             <!-- Transparência -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-file-list-3-line text-4xl mb-4"
+                class="ri-file-list-3-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Transparência
               </h3>
             </a>
@@ -333,34 +347,38 @@
             <!-- Cidadania -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
-              <i class="ri-group-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">Cidadania</h3>
+              <i class="ri-group-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+                Cidadania
+              </h3>
             </a>
 
             <!-- Educação -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-book-open-line text-4xl mb-4"
+                class="ri-book-open-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">Educação</h3>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
+                Educação
+              </h3>
             </a>
 
             <!-- Licenças, Alvarás e Permissões -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-file-paper-2-line text-4xl mb-4"
+                class="ri-file-paper-2-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Licenças e Alvarás
               </h3>
             </a>
@@ -368,13 +386,13 @@
             <!-- Ouvidoria e Denúncias -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-customer-service-2-line text-4xl mb-4"
+                class="ri-customer-service-2-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Ouvidoria e Denúncias
               </h3>
             </a>
@@ -382,13 +400,13 @@
             <!-- Serviços Urbanos -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
             >
               <i
-                class="ri-community-line text-4xl mb-4"
+                class="ri-community-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Serviços Urbanos
               </h3>
             </a>
@@ -677,7 +695,7 @@
     </footer>
     <!-- Mobile Bottom Navigation -->
     <nav
-      class="fixed bottom-0 left-0 right-0 bg-[#0f59bf] p-4 flex items-center justify-between md:hidden z-50"
+      class="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#0286f2] to-[#1544bd] p-4 flex items-center justify-between md:hidden z-50"
     >
       <a href="#" class="text-white flex flex-col items-center">
         <i class="ri-home-line text-4xl"></i>
@@ -702,6 +720,11 @@
       </a>
     </nav>
 
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" class="fixed bottom-24 right-4 z-50 bg-gradient-to-r from-[#0286f2] to-[#1544bd] w-12 h-12 rounded-full flex items-center justify-center shadow-lg md:bottom-8 md:right-8">
+      <i class="ri-arrow-up-line text-white text-2xl"></i>
+    </button>
+
     <!-- Script para o menu mobile -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -710,6 +733,29 @@
         
         menuButton.addEventListener('click', function() {
           mobileMenu.classList.toggle('hidden');
+        });
+
+        // Funcionalidade do botão voltar ao topo
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        // Mostrar/esconder o botão dependendo da posição da página
+        window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('hidden');
+          } else {
+            backToTopButton.classList.add('hidden');
+          }
+        });
+        
+        // Inicialmente oculto
+        backToTopButton.classList.add('hidden');
+        
+        // Ação de voltar ao topo ao clicar
+        backToTopButton.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
         });
       });
     </script>
