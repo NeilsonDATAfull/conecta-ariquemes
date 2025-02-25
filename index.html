@@ -184,6 +184,9 @@
         padding: 10px;
         margin: 0 auto;
         max-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
       
       .vereador-img-container {
@@ -307,10 +310,11 @@
         padding: 15px 0; /* Espaço para o efeito hover */
       }
       
-      @media (max-width: 768px) {
+      /* Ajuste específico para grid em telas pequenas */
+      @media (max-width: 640px) {
         .vereador-card {
-          padding: 10px;
-          max-width: 120px;
+          max-width: 110px;
+          padding: 5px;
         }
         
         .vereador-img-container {
@@ -345,16 +349,15 @@
         }
       }
       
-      /* Ajuste específico para dispositivos muito pequenos */
-      @media (max-width: 479px) {
+      @media (max-width: 480px) {
         .vereador-card {
-          max-width: 120px;
-          padding: 10px;
+          max-width: 95px;
+          padding: 3px;
         }
         
         .vereador-img-container {
-          width: 100px;
-          height: 100px;
+          width: 85px;
+          height: 85px;
         }
         
         /* Ajuste maior para efeito de hover em telas muito pequenas */
@@ -382,35 +385,6 @@
         
         .vereador-link {
           font-size: 1.2rem;
-        }
-      }
-      
-      /* Ajuste para visualização de 3 itens em dispositivos móveis */
-      @media (min-width: 480px) and (max-width: 767px) {
-        .vereador-card {
-          max-width: 130px;
-          padding: 10px;
-        }
-        
-        .vereador-img-container {
-          width: 90px;
-          height: 90px;
-        }
-        
-        .vereador-nome {
-          font-size: 0.75rem;
-        }
-        
-        .vereador-cargo {
-          font-size: 0.7rem;
-        }
-        
-        /* Ajuste de escala para este breakpoint */
-        .vereador-img-container:hover,
-        .vereador-img-container:focus,
-        .vereador-img-container:active,
-        .vereador-img-container.touch-active {
-          transform: scale(1.35);
         }
       }
       
@@ -529,8 +503,8 @@
           Vereadores da Câmara de 2025 a 2028
         </h2>
         
-        <!-- Carousel de vereadores -->
-        <div class="owl-carousel owl-theme vereadores-carousel">
+        <!-- Container de vereadores usando carousel e grid -->
+        <div class="vereadores-carousel owl-carousel owl-theme grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4">
           <!-- Vereador 1 -->
           <div class="item">
             <div class="vereador-card">
@@ -718,6 +692,31 @@
             </div>
           </div>
         </div>
+        
+        <!-- Script específico para suporte a toque na grid -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            // Adicionar suporte para toque em dispositivos móveis
+            if('ontouchstart' in window) {
+              document.querySelectorAll('.vereador-img-container').forEach(function(item) {
+                item.addEventListener('touchstart', function(e) {
+                  // Prevenir o comportamento padrão do navegador para o toque
+                  e.preventDefault();
+                  
+                  // Remover classe ativa de todos os outros itens
+                  document.querySelectorAll('.vereador-img-container').forEach(function(innerItem) {
+                    if (innerItem !== item) {
+                      innerItem.classList.remove('touch-active');
+                    }
+                  });
+                  
+                  // Alternar a classe touch-active no item atual
+                  item.classList.toggle('touch-active');
+                });
+              });
+            }
+          });
+        </script>
       </div>
     </section>
     
@@ -1363,7 +1362,7 @@
           loop: true,
           margin: 20,
           nav: true,
-          dots: true,
+          dots: false,
           autoplay: true,
           autoplayTimeout: 5000,
           autoplayHoverPause: true,
@@ -1384,50 +1383,49 @@
           }
         });
         
-        // Inicialização do carrossel de vereadores
+        // Inicializar o carousel de vereadores
         $(".vereadores-carousel").owlCarousel({
           loop: true,
-          margin: 20,
-          stagePadding: 0,
+          margin: 10,
           nav: true,
           dots: false,
           autoplay: true,
-          autoplayTimeout: 6000,
+          autoplayTimeout: 5000,
           autoplayHoverPause: true,
-          smartSpeed: 800,
           navText: [
             "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
             "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
           ],
           responsive: {
             0: {
-              items: 2,
-              margin: 5
+              items: 3
             },
-            480: {
-              items: 3,
-              margin: 5
+            576: {
+              items: 3
             },
             768: {
-              items: 3,
-              margin: 15
+              items: 4
             },
             992: {
-              items: 4,
-              margin: 20
+              items: 5
             },
             1200: {
-              items: 5,
-              margin: 20
+              items: 6
             }
           }
         });
         
         // Adicionar suporte para toque em dispositivos móveis
         if('ontouchstart' in window) {
-          $('.vereador-img-container').on('touchstart', function() {
-            $('.vereador-img-container').removeClass('touch-active');
-            $(this).addClass('touch-active');
+          $('.vereador-img-container').on('touchstart', function(e) {
+            // Prevenir o comportamento padrão do navegador para o toque
+            e.preventDefault();
+            
+            // Remover classe ativa de todos os outros itens
+            $('.vereador-img-container').not(this).removeClass('touch-active');
+            
+            // Alternar a classe touch-active no item atual
+            $(this).toggleClass('touch-active');
           });
         }
         
