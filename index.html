@@ -53,21 +53,7 @@
           padding-bottom: 60px; /* Espaço para o menu de navegação inferior */
         }
         
-        /* Espaçamento adicional para conteúdo em dispositivos móveis */
-        .content-section {
-          padding: 10px;
-          margin-top: 80px; /* Espaço para o menu fixo no topo */
-        }
         
-        /* Ajuste específico para a primeira seção após o header */
-        .content-section:first-of-type {
-          margin-top: 100px; /* Espaço extra para garantir que o título seja visível */
-        }
-        
-        /* Reduzir a margem das outras seções que já têm margem superior por padrão */
-        .content-section:not(:first-of-type) {
-          margin-top: 10px;
-        }
       }
       
       /* Estilos para o Owl Carousel */
@@ -294,15 +280,36 @@
           background-color: rgba(2, 133, 240, 0.95);
           opacity: 1 !important; /* Forçar visibilidade */
           border: 2px solid white; /* Adicionar borda para melhor visualização */
+          padding: 12px; /* Aumentar o padding interno para evitar corte de texto */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
         
         /* Garantir que o overlay apareça acima de outros elementos */
         .vereador-img-container.touch-active {
           position: relative;
           z-index: 100; /* Valor mais alto para prioridade máxima */
-          border-radius: 10px !important;
-          transform: scale(1.2) !important; /* Forçar escala maior */
-          box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Sombra para destacar */
+          border-radius: 12px !important;
+          transform: scale(1.4) !important; /* Aumentar escala para mais espaço */
+          box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Sombra para destacar */
+          margin: 5px !important; /* Adicionar margem para evitar sobreposição */
+        }
+        
+        /* Melhorar espaçamento dos ícones sociais em modo toque */
+        .vereador-img-container.touch-active .vereador-social {
+          display: flex;
+          gap: 15px;
+          margin-top: 5px;
+          justify-content: center;
+        }
+        
+        /* Ajustes para o item do carrossel que contém o vereador ativo */
+        .owl-item .item:has(.vereador-img-container.touch-active) {
+          z-index: 100;
+          position: relative;
+          overflow: visible;
         }
         
         /* Cores mais vibrantes para texto no overlay */
@@ -310,12 +317,21 @@
         .vereador-img-container.touch-active .vereador-cargo {
           text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
           font-weight: bold;
+          width: 100%;
+          text-align: center;
         }
         
         /* Ícones mais visíveis */
         .vereador-img-container.touch-active .vereador-link {
           transform: scale(1.2);
           font-size: 1.6rem;
+          background-color: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
       
@@ -407,9 +423,51 @@
         /* Ajuste maior para efeito de hover em telas muito pequenas */
         .vereador-img-container:hover,
         .vereador-img-container:focus,
-        .vereador-img-container:active,
-        .vereador-img-container.touch-active {
+        .vereador-img-container:active {
           transform: scale(1.4);
+        }
+        
+        /* Configuração específica para telas pequenas em toque */
+        .vereador-img-container.touch-active {
+          transform: scale(1.5) !important; /* Escala maior para telas menores */
+          padding: 0 !important; /* Reset padding */
+        }
+        
+        /* Ampliar o overlay para garantir que todo conteúdo seja visível */
+        .vereador-img-container.touch-active .vereador-overlay {
+          padding: 10px !important; /* Mais padding para telas menores */
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: center !important;
+          align-items: center !important;
+          width: 100% !important;
+          height: 100% !important;
+        }
+        
+        /* Ajustes para o texto dentro do overlay */
+        .vereador-img-container.touch-active .vereador-nome {
+          font-size: 0.8rem !important;
+          margin-bottom: 4px !important;
+          line-height: 1.1 !important;
+        }
+        
+        .vereador-img-container.touch-active .vereador-cargo {
+          font-size: 0.75rem !important;
+          margin-bottom: 6px !important;
+          line-height: 1.1 !important;
+        }
+        
+        /* Melhorar espaçamento dos ícones sociais em telas pequenas */
+        .vereador-img-container.touch-active .vereador-social {
+          gap: 12px !important;
+          margin-top: 4px !important;
+        }
+        
+        /* Fazer ícones um pouco menores em telas muito pequenas */
+        .vereador-img-container.touch-active .vereador-link {
+          width: 28px !important;
+          height: 28px !important;
+          font-size: 1.4rem !important;
         }
         
         /* Ajustes adicionais para o overlay */
@@ -542,13 +600,13 @@
     <!-- Nova seção de vereadores com carousel infinito -->
     <section class="py-8 bg-white content-section">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="section-title">
+        <h2 class="section-title md:mt-0 mt-16">
           <i class="ri-government-line"></i>
-          Vereadores da Câmara de 2025 a 2028
+          Vereadores - 2025 a 2028
         </h2>
         
         <!-- Container de vereadores usando carousel e grid -->
-        <div class="vereadores-carousel owl-carousel owl-theme grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4">
+        <div class="vereadores-carousel owl-carousel owl-theme grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-2">
           <!-- Vereador 1 -->
           <div class="item">
             <div class="vereador-card">
@@ -779,7 +837,7 @@
       </div>
     </section>
     
-    <main class="md:mt-0 mt-8">
+    <main class="md:mt-0 mt-0">
       <section class="py-6 bg-white content-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="section-title">
