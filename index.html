@@ -64,12 +64,13 @@
                 <i class="ri-notification-3-line text-3xl"></i>
               </div>
               <button id="mobile-menu-button" class="w-8 h-8 flex items-center justify-center text-white">
-                <i class="ri-menu-line text-3xl"></i>
+                <i class="ri-menu-line text-3xl" id="menu-icon"></i>
+                <i class="ri-close-line text-3xl hidden" id="close-icon"></i>
               </button>
             </div>
           </div>
           <!-- Menu Mobile (escondido por padrão) -->
-          <div id="mobile-menu" class="hidden mt-4 pb-2">
+          <div id="mobile-menu" class="hidden mt-4 pb-2 opacity-0 transform -translate-y-8 transition-all duration-500 ease-in-out">
             <div class="flex flex-col space-y-3 items-end">
               <a href="portal.html" class="text-white hover:text-gray-200 text-2xl">Início</a>
               <a href="#" class="text-white hover:text-gray-200 text-2xl">Sobre</a>
@@ -727,9 +728,41 @@
       document.addEventListener('DOMContentLoaded', function() {
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
+        // Função para abrir o menu com animação suave
+        function openMenu() {
+          menuIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          mobileMenu.classList.remove('hidden');
+          
+          // Pequeno timeout para permitir que a transição funcione após remover o hidden
+          setTimeout(() => {
+            mobileMenu.classList.remove('opacity-0', 'transform', '-translate-y-8');
+            mobileMenu.classList.add('opacity-100', 'translate-y-0');
+          }, 10);
+        }
+        
+        // Função para fechar o menu com animação suave
+        function closeMenu() {
+          mobileMenu.classList.add('opacity-0', 'transform', '-translate-y-8');
+          mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+          
+          // Aguardar a animação terminar antes de esconder completamente
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+          }, 500); // Mesmo tempo que a duração da transição
+        }
         
         menuButton.addEventListener('click', function() {
-          mobileMenu.classList.toggle('hidden');
+          if (mobileMenu.classList.contains('hidden') || mobileMenu.classList.contains('opacity-0')) {
+            openMenu();
+          } else {
+            closeMenu();
+          }
         });
 
         // Funcionalidade do botão voltar ao topo
