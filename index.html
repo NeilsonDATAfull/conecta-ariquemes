@@ -53,7 +53,7 @@
   <body class="bg-white">
     <header class="relative">
       <!-- Header Mobile -->
-      <nav class="bg-gradient-to-r from-[#0286f2] to-[#1544bd] md:hidden">
+      <nav class="bg-gradient-to-r from-[#0286f2] to-[#1544bd] md:hidden transition-all duration-1000 ease-in-out fixed top-0 left-0 right-0 z-50 transform translate-y-0" id="mobile-header">
         <div class="px-4 py-6">
           <div class="flex justify-between items-center">
             <div class="flex items-center">
@@ -70,7 +70,7 @@
             </div>
           </div>
           <!-- Menu Mobile (escondido por padrão) -->
-          <div id="mobile-menu" class="hidden mt-4 pb-2 opacity-0 transform -translate-y-8 transition-all duration-500 ease-in-out">
+          <div id="mobile-menu" class="hidden mt-4 pb-2 transition-all duration-1000 ease-in-out">
             <div class="flex flex-col space-y-3 items-end">
               <a href="portal.html" class="text-white hover:text-gray-200 text-2xl">Início</a>
               <a href="#" class="text-white hover:text-gray-200 text-2xl">Sobre</a>
@@ -145,7 +145,7 @@
         </div>
       </div>
     </header>
-    <main>
+    <main class="md:mt-0 mt-24">
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="text-3xl font-bold text-gray-900/80 mb-8">
@@ -730,6 +730,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
         const closeIcon = document.getElementById('close-icon');
+        const mobileHeader = document.getElementById('mobile-header');
         
         // Função para abrir o menu com animação suave
         function openMenu() {
@@ -737,32 +738,61 @@
           closeIcon.classList.remove('hidden');
           mobileMenu.classList.remove('hidden');
           
+          // Ajusta a altura do header
+          mobileHeader.classList.add('pb-4');
+          
           // Pequeno timeout para permitir que a transição funcione após remover o hidden
           setTimeout(() => {
-            mobileMenu.classList.remove('opacity-0', 'transform', '-translate-y-8');
-            mobileMenu.classList.add('opacity-100', 'translate-y-0');
+            mobileMenu.classList.add('opacity-100');
           }, 10);
         }
         
         // Função para fechar o menu com animação suave
         function closeMenu() {
-          mobileMenu.classList.add('opacity-0', 'transform', '-translate-y-8');
-          mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+          mobileMenu.classList.remove('opacity-100');
           
           // Aguardar a animação terminar antes de esconder completamente
           setTimeout(() => {
             mobileMenu.classList.add('hidden');
             menuIcon.classList.remove('hidden');
             closeIcon.classList.add('hidden');
+            mobileHeader.classList.remove('pb-4');
           }, 500); // Mesmo tempo que a duração da transição
         }
         
         menuButton.addEventListener('click', function() {
-          if (mobileMenu.classList.contains('hidden') || mobileMenu.classList.contains('opacity-0')) {
+          if (mobileMenu.classList.contains('hidden')) {
             openMenu();
           } else {
             closeMenu();
           }
+        });
+
+        // Controle do header ao rolar a página
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          // Se estiver no topo da página, sempre mostre o header
+          if (scrollTop <= 10) {
+            mobileHeader.classList.remove('-translate-y-full');
+            mobileHeader.classList.add('translate-y-0');
+            return;
+          }
+          
+          // Rolando para baixo
+          if (scrollTop > lastScrollTop) {
+            mobileHeader.classList.remove('translate-y-0');
+            mobileHeader.classList.add('-translate-y-full');
+          } 
+          // Rolando para cima
+          else {
+            mobileHeader.classList.remove('-translate-y-full');
+            mobileHeader.classList.add('translate-y-0');
+          }
+          
+          lastScrollTop = scrollTop;
         });
 
         // Funcionalidade do botão voltar ao topo
