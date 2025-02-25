@@ -98,6 +98,33 @@
         justify-content: center;
       }
       
+      /* Estilo para títulos de seção padronizados */
+      .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 2rem;
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #1544bd;
+        text-align: left;
+      }
+      
+      .section-title i {
+        margin-right: 0.75rem;
+        color: #0286f2;
+        font-size: 2.25rem;
+      }
+      
+      /* Em fundos escuros, usamos texto branco */
+      .bg-blue-theme .section-title {
+        color: white;
+      }
+      
+      .bg-blue-theme .section-title i {
+        color: white;
+      }
+      
       /* Ajuste para mobile */
       @media (max-width: 768px) {
         .noticias-carousel .owl-nav button.owl-prev {
@@ -116,6 +143,23 @@
           display: flex;
           justify-content: center;
           margin-top: 20px;
+        }
+        
+        .section-title {
+          font-size: 1.5rem;
+        }
+        
+        .section-title i {
+          font-size: 1.75rem;
+        }
+        
+        /* Ajuste para a seção de Categorias em modo mobile */
+        .bg-blue-theme .section-title {
+          color: #1544bd;
+        }
+        
+        .bg-blue-theme .section-title i {
+          color: #0286f2;
         }
       }
     </style>
@@ -218,7 +262,8 @@
     <main class="md:mt-0 mt-24">
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold text-gray-900/80 mb-8">
+          <h2 class="section-title">
+            <i class="ri-shield-check-line"></i>
             Conecta Transparência
           </h2>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -250,9 +295,10 @@
           </div>
         </div>
       </section>
-      <section class="py-16 bg-gray-100 md:bg-[#134bc2]">
+      <section class="py-16 bg-gray-100 md:bg-[#134bc2] bg-blue-theme">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-3xl font-bold text-gray-800 md:text-white mb-8 text-center">
+          <h2 class="section-title">
+            <i class="ri-apps-line"></i>
             Categorias de Serviços
           </h2>
           
@@ -418,7 +464,10 @@
       </section>
       <section class="py-16 bg-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold mb-8 text-center">Conecta Notícias</h2>
+          <h2 class="section-title">
+            <i class="ri-newspaper-line"></i>
+            Conecta Notícias
+          </h2>
           <div class="owl-carousel owl-theme noticias-carousel">
             <div class="item">
               <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
@@ -502,11 +551,10 @@
 
       <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between items-center mb-8">
-            <h2 class="text-3xl font-bold text-gray-900/80">
-              Serviços ao Cidadão
-            </h2>
-          </div>
+          <h2 class="section-title">
+            <i class="ri-user-heart-line"></i>
+            Serviços ao Cidadão
+          </h2>
           
           <!-- Estrutura única para desktop e mobile -->
           <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 servicos-container">
