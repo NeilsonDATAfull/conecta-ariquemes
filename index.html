@@ -67,10 +67,13 @@
         margin: 0 10px;
       }
       
-      .categorias-carousel .owl-nav,
-      .servicos-carousel .owl-nav {
+      /* Corrigindo o posicionamento das setas de navegação para as classes dos containers */
+      .categorias-container.owl-carousel .owl-nav,
+      .servicos-container.owl-carousel .owl-nav {
         text-align: center;
         margin-top: 20px;
+        width: 100%;
+        position: relative;
       }
       
       .owl-carousel .owl-nav button i {
@@ -86,14 +89,9 @@
       }
       
       /* Ajustes para altura uniforme dos itens nos carrosséis */
-      .categorias-carousel .item,
-      .servicos-carousel .item {
-        height: 100%;
-      }
-      
-      .categorias-carousel .item a,
-      .servicos-carousel .item a {
-        height: 120px; /* Altura fixa para todos os itens */
+      .owl-carousel .categoria-item,
+      .owl-carousel .servico-item {
+        height: 120px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -110,6 +108,14 @@
         .noticias-carousel .owl-nav button.owl-next {
           right: -10px;
           position: absolute;
+        }
+        
+        /* Garantir que as setas dos carrosséis de categorias e serviços permaneçam no centro */
+        .categorias-container.owl-carousel .owl-nav,
+        .servicos-container.owl-carousel .owl-nav {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
         }
       }
     </style>
@@ -250,15 +256,15 @@
             Categorias de Serviços
           </h2>
           
-          <!-- Grid para desktop -->
-          <div class="hidden md:grid md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <!-- Estrutura única para desktop e mobile -->
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 categorias-container">
             <!-- Administração Pública -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
-              <i class="ri-team-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-team-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Administração Pública
               </h3>
             </a>
@@ -266,13 +272,13 @@
             <!-- Cultura e Lazer -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
               <i
-                class="ri-palette-line text-4xl mb-4"
+                class="ri-palette-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Cultura e Lazer
               </h3>
             </a>
@@ -280,10 +286,10 @@
             <!-- Esportes e Bem-Estar -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
-              <i class="ri-run-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-run-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Esportes e Bem-Estar
               </h3>
             </a>
@@ -291,10 +297,10 @@
             <!-- Meio Ambiente -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
-              <i class="ri-plant-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-plant-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Meio Ambiente
               </h3>
             </a>
@@ -302,13 +308,13 @@
             <!-- Pessoa Jurídica e Autônomo -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
               <i
-                class="ri-briefcase-line text-4xl mb-4"
+                class="ri-briefcase-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Pessoa Jurídica e Autônomo
               </h3>
             </a>
@@ -316,13 +322,13 @@
             <!-- Trabalho e Qualificação -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
               <i
-                class="ri-graduation-cap-line text-4xl mb-4"
+                class="ri-graduation-cap-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Trabalho e Qualificação
               </h3>
             </a>
@@ -330,13 +336,13 @@
             <!-- Animais -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
               <i
-                class="ri-service-line text-4xl mb-4"
+                class="ri-service-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Animais
               </h3>
             </a>
@@ -344,13 +350,13 @@
             <!-- Desenvolvimento Econômico -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
               <i
-                class="ri-line-chart-line text-4xl mb-4"
+                class="ri-line-chart-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Desenv. Econômico
               </h3>
             </a>
@@ -358,13 +364,13 @@
             <!-- Imóveis -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
               <i
-                class="ri-home-4-line text-4xl mb-4"
+                class="ri-home-4-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Imóveis
               </h3>
             </a>
@@ -372,10 +378,10 @@
             <!-- Mobilidade -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
-              <i class="ri-bus-line text-4xl mb-4" style="color: #057ae8"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-bus-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Mobilidade
               </h3>
             </a>
@@ -383,13 +389,13 @@
             <!-- Saúde -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
               <i
-                class="ri-heart-pulse-line text-4xl mb-4"
+                class="ri-heart-pulse-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Saúde
               </h3>
             </a>
@@ -397,110 +403,17 @@
             <!-- Transparência -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] categoria-item"
             >
               <i
-                class="ri-file-list-3-line text-4xl mb-4"
+                class="ri-file-list-3-line text-3xl md:text-4xl mb-3 md:mb-4"
                 style="color: #057ae8"
               ></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Transparência
               </h3>
             </a>
           </div>
-          
-          <!-- Carrossel para mobile -->
-          <div class="md:hidden">
-            <div class="owl-carousel owl-theme categorias-carousel">
-              <!-- Administração Pública -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-team-line text-3xl mb-3" style="color: #057ae8"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">
-                    Administração Pública
-                  </h3>
-                </a>
-              </div>
-
-              <!-- Cultura e Lazer -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i
-                    class="ri-palette-line text-3xl mb-3"
-                    style="color: #057ae8"
-                  ></i>
-                  <h3 class="text-sm font-semibold text-gray-800">
-                    Cultura e Lazer
-                  </h3>
-                </a>
-              </div>
-
-              <!-- Esportes e Bem-Estar -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-run-line text-3xl mb-3" style="color: #057ae8"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">
-                    Esportes e Bem-Estar
-                  </h3>
-                </a>
-              </div>
-
-              <!-- Meio Ambiente -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-plant-line text-3xl mb-3" style="color: #057ae8"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">
-                    Meio Ambiente
-                  </h3>
-                </a>
-              </div>
-
-              <!-- Pessoa Jurídica e Autônomo -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i
-                    class="ri-briefcase-line text-3xl mb-3"
-                    style="color: #057ae8"
-                  ></i>
-                  <h3 class="text-sm font-semibold text-gray-800">
-                    Pessoa Jurídica e Autônomo
-                  </h3>
-                </a>
-              </div>
-
-              <!-- Trabalho e Qualificação -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i
-                    class="ri-graduation-cap-line text-3xl mb-3"
-                    style="color: #057ae8"
-                  ></i>
-                  <h3 class="text-sm font-semibold text-gray-800">
-                    Trabalho e Qualificação
-                  </h3>
-                </a>
-              </div>
-            </div>
-          </div>
-          
         </div>
       </section>
       <section class="py-16 bg-blue-50">
@@ -595,42 +508,42 @@
             </h2>
           </div>
           
-          <!-- Grid para desktop -->
-          <div class="hidden md:grid md:grid-cols-4 lg:grid-cols-5 gap-6">
+          <!-- Estrutura única para desktop e mobile -->
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 servicos-container">
             <!-- Criança -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-team-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">Criança</h3>
+              <i class="ri-team-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">Criança</h3>
             </a>
 
             <!-- Jovem -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-group-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">Jovem</h3>
+              <i class="ri-group-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">Jovem</h3>
             </a>
 
             <!-- Servidor(a) -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-user-settings-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">Servidor(a)</h3>
+              <i class="ri-user-settings-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">Servidor(a)</h3>
             </a>
 
             <!-- Empreendedor(a) -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-shake-hands-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-shake-hands-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Empreendedor(a)
               </h3>
             </a>
@@ -638,46 +551,46 @@
             <!-- Mulher -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-women-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">Mulher</h3>
+              <i class="ri-women-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">Mulher</h3>
             </a>
 
             <!-- Turista -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-camera-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">Turista</h3>
+              <i class="ri-camera-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">Turista</h3>
             </a>
 
             <!-- Idoso(a) -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-user-heart-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">Idoso(a)</h3>
+              <i class="ri-user-heart-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">Idoso(a)</h3>
             </a>
 
             <!-- PCD -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-wheelchair-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">PCD</h3>
+              <i class="ri-wheelchair-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">PCD</h3>
             </a>
 
             <!-- Tutor(a) de pet -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-service-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-service-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Tutor(a) de pet
               </h3>
             </a>
@@ -685,99 +598,14 @@
             <!-- Consultas públicas -->
             <a
               href="#"
-              class="block bg-white rounded-lg shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8]"
+              class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] servico-item"
             >
-              <i class="ri-file-list-3-line text-4xl text-primary mb-4"></i>
-              <h3 class="text-base font-semibold text-gray-800">
+              <i class="ri-file-list-3-line text-3xl md:text-4xl text-primary mb-3 md:mb-4"></i>
+              <h3 class="text-sm md:text-base font-semibold text-gray-800">
                 Consultas públicas
               </h3>
             </a>
           </div>
-          
-          <!-- Carrossel para mobile -->
-          <div class="md:hidden">
-            <div class="owl-carousel owl-theme servicos-carousel">
-              <!-- Criança -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-team-line text-3xl text-primary mb-3"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">Criança</h3>
-                </a>
-              </div>
-
-              <!-- Jovem -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-group-line text-3xl text-primary mb-3"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">Jovem</h3>
-                </a>
-              </div>
-
-              <!-- Servidor(a) -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-user-settings-line text-3xl text-primary mb-3"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">Servidor(a)</h3>
-                </a>
-              </div>
-
-              <!-- Empreendedor(a) -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-shake-hands-line text-3xl text-primary mb-3"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">
-                    Empreendedor(a)
-                  </h3>
-                </a>
-              </div>
-
-              <!-- Mulher -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-women-line text-3xl text-primary mb-3"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">Mulher</h3>
-                </a>
-              </div>
-
-              <!-- Turista -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-camera-line text-3xl text-primary mb-3"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">Turista</h3>
-                </a>
-              </div>
-
-              <!-- Idoso(a) -->
-              <div class="item">
-                <a
-                  href="#"
-                  class="block bg-white rounded-lg shadow-md p-4 text-center border-b-4 border-[#057ae8] h-full"
-                >
-                  <i class="ri-user-heart-line text-3xl text-primary mb-3"></i>
-                  <h3 class="text-sm font-semibold text-gray-800">Idoso(a)</h3>
-                </a>
-              </div>
-            </div>
-          </div>
-          
         </div>
       </section>
       <section class="py-16 bg-blue-50">
@@ -1018,7 +846,7 @@
       });
     </script>
     
-    <!-- Script para o Owl Carousel -->
+    <!-- Script para o Owl Carousel com responsividade -->
     <script>
       $(document).ready(function(){
         $(".noticias-carousel").owlCarousel({
@@ -1046,46 +874,91 @@
           }
         });
         
-        // Carrossel de categorias (mobile)
-        $(".categorias-carousel").owlCarousel({
-          loop: true,
-          margin: 15,
-          nav: true,
-          dots: false,
-          autoplay: false,
-          navText: [
-            "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
-            "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
-          ],
-          responsive: {
-            0: {
-              items: 2
-            },
-            460: {
-              items: 3
+        // Função para inicializar ou destruir carrosséis baseado no tamanho da tela
+        function gerenciarCarrossel() {
+          if (window.innerWidth < 768) {
+            // Inicializar carrosséis em telas pequenas se ainda não foram inicializados
+            if (!$('.categorias-container').hasClass('owl-loaded')) {
+              $('.categorias-container').addClass('owl-carousel');
+              $('.categorias-container').owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: false,
+                navText: [
+                  "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
+                  "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
+                ],
+                responsive: {
+                  0: {
+                    items: 2
+                  },
+                  460: {
+                    items: 3
+                  }
+                }
+              });
+              
+              // Garantir que os controles de navegação estejam posicionados corretamente
+              setTimeout(function() {
+                $('.categorias-container').find('.owl-nav').css({
+                  'text-align': 'center',
+                  'margin-top': '20px'
+                });
+              }, 100);
+            }
+            
+            if (!$('.servicos-container').hasClass('owl-loaded')) {
+              $('.servicos-container').addClass('owl-carousel');
+              $('.servicos-container').owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: false,
+                navText: [
+                  "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
+                  "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
+                ],
+                responsive: {
+                  0: {
+                    items: 2
+                  },
+                  460: {
+                    items: 3
+                  }
+                }
+              });
+              
+              // Garantir que os controles de navegação estejam posicionados corretamente
+              setTimeout(function() {
+                $('.servicos-container').find('.owl-nav').css({
+                  'text-align': 'center',
+                  'margin-top': '20px'
+                });
+              }, 100);
+            }
+          } else {
+            // Destruir carrosséis em telas grandes se foram inicializados
+            if ($('.categorias-container').hasClass('owl-loaded')) {
+              $('.categorias-container').owlCarousel('destroy');
+              $('.categorias-container').removeClass('owl-carousel');
+            }
+            
+            if ($('.servicos-container').hasClass('owl-loaded')) {
+              $('.servicos-container').owlCarousel('destroy');
+              $('.servicos-container').removeClass('owl-carousel');
             }
           }
-        });
+        }
         
-        // Carrossel de serviços (mobile)
-        $(".servicos-carousel").owlCarousel({
-          loop: true,
-          margin: 15,
-          nav: true,
-          dots: false,
-          autoplay: false,
-          navText: [
-            "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
-            "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
-          ],
-          responsive: {
-            0: {
-              items: 2
-            },
-            460: {
-              items: 3
-            }
-          }
+        // Executar no carregamento da página
+        gerenciarCarrossel();
+        
+        // Executar quando a janela for redimensionada
+        $(window).resize(function() {
+          gerenciarCarrossel();
         });
       });
     </script>
