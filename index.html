@@ -52,6 +52,22 @@
         body {
           padding-bottom: 60px; /* Espaço para o menu de navegação inferior */
         }
+        
+        /* Espaçamento adicional para conteúdo em dispositivos móveis */
+        .content-section {
+          padding: 10px;
+          margin-top: 80px; /* Espaço para o menu fixo no topo */
+        }
+        
+        /* Ajuste específico para a primeira seção após o header */
+        .content-section:first-of-type {
+          margin-top: 100px; /* Espaço extra para garantir que o título seja visível */
+        }
+        
+        /* Reduzir a margem das outras seções que já têm margem superior por padrão */
+        .content-section:not(:first-of-type) {
+          margin-top: 10px;
+        }
       }
       
       /* Estilos para o Owl Carousel */
@@ -162,6 +178,251 @@
           color: #0286f2;
         }
       }
+      
+      /* Estilos para seção de vereadores */
+      .vereador-card {
+        padding: 10px;
+        margin: 0 auto;
+        max-width: 200px;
+      }
+      
+      .vereador-img-container {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .vereador-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .vereador-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(2, 133, 240, 0.85);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+        padding: 15px;
+        text-align: center;
+        pointer-events: none; /* Evita que o overlay receba eventos de mouse */
+      }
+      
+      .vereador-nome {
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+      
+      .vereador-cargo {
+        color: white;
+        font-size: 0.875rem;
+        margin-bottom: 10px;
+      }
+      
+      .vereador-social {
+        display: flex;
+        gap: 15px;
+      }
+      
+      .vereador-link {
+        color: white;
+        font-size: 1.5rem;
+        transition: transform 0.2s ease;
+      }
+      
+      .vereador-link:hover {
+        transform: scale(1.2);
+      }
+      
+      .vereador-img-container:hover,
+      .vereador-img-container:focus {
+        border-radius: 10px;
+        transform: scale(1.1);
+        z-index: 10;
+      }
+      
+      .vereador-img-container:hover .vereador-overlay,
+      .vereador-img-container:focus .vereador-overlay {
+        opacity: 1;
+      }
+      
+      /* Suporte para dispositivos touch */
+      .vereador-img-container.touch-active {
+        border-radius: 10px;
+        transform: scale(1.1);
+        z-index: 10;
+      }
+      
+      .vereador-img-container.touch-active .vereador-overlay {
+        opacity: 1;
+      }
+      
+      /* Ajuste para a navegação do carrossel de vereadores */
+      .vereadores-carousel .owl-nav {
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      /* Garantir que o último item não seja cortado */
+      .vereadores-carousel {
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 30px; /* Espaço adicional para o efeito hover */
+      }
+      
+      .vereadores-carousel .owl-stage-outer {
+        overflow: visible; /* Permitir que itens expandam além do contêiner */
+        padding: 10px 0; /* Aumentando de 5px para 10px */
+      }
+      
+      /* Garantir que o autoplay não cause problemas de hover */
+      .vereadores-carousel .owl-item {
+        touch-action: manipulation;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        overflow: visible; /* Permitir que o hover se expanda além do item */
+        padding: 0 5px; /* Adicionando espaço horizontal entre os itens */
+      }
+      
+      /* Evitar problemas de camadas na transição */
+      .vereadores-carousel .owl-stage {
+        will-change: transform;
+        transform: translate3d(0, 0, 0);
+        padding: 15px 0; /* Espaço para o efeito hover */
+      }
+      
+      @media (max-width: 768px) {
+        .vereador-card {
+          padding: 10px;
+          max-width: 120px;
+        }
+        
+        .vereador-img-container {
+          width: 100px;
+          height: 100px;
+        }
+        
+        .vereador-nome {
+          font-size: 0.75rem;
+        }
+        
+        .vereador-cargo {
+          font-size: 0.7rem;
+        }
+        
+        /* Efeito de hover para dispositivos móveis */
+        .vereador-img-container:hover,
+        .vereador-img-container:focus,
+        .vereador-img-container:active,
+        .vereador-img-container.touch-active {
+          transform: scale(1.3);
+          z-index: 20;
+        }
+        
+        /* Melhorar o overlay em dispositivos móveis */
+        .vereador-overlay {
+          padding: 8px;
+        }
+        
+        .vereador-social {
+          gap: 10px;
+        }
+      }
+      
+      /* Ajuste específico para dispositivos muito pequenos */
+      @media (max-width: 479px) {
+        .vereador-card {
+          max-width: 120px;
+          padding: 10px;
+        }
+        
+        .vereador-img-container {
+          width: 100px;
+          height: 100px;
+        }
+        
+        /* Ajuste maior para efeito de hover em telas muito pequenas */
+        .vereador-img-container:hover,
+        .vereador-img-container:focus,
+        .vereador-img-container:active,
+        .vereador-img-container.touch-active {
+          transform: scale(1.4);
+        }
+        
+        /* Ajustes adicionais para o overlay */
+        .vereador-overlay {
+          padding: 6px;
+        }
+        
+        .vereador-nome {
+          margin-bottom: 2px;
+          font-size: 0.7rem;
+        }
+        
+        .vereador-cargo {
+          margin-bottom: 5px;
+          font-size: 0.65rem;
+        }
+        
+        .vereador-link {
+          font-size: 1.2rem;
+        }
+      }
+      
+      /* Ajuste para visualização de 3 itens em dispositivos móveis */
+      @media (min-width: 480px) and (max-width: 767px) {
+        .vereador-card {
+          max-width: 130px;
+          padding: 10px;
+        }
+        
+        .vereador-img-container {
+          width: 90px;
+          height: 90px;
+        }
+        
+        .vereador-nome {
+          font-size: 0.75rem;
+        }
+        
+        .vereador-cargo {
+          font-size: 0.7rem;
+        }
+        
+        /* Ajuste de escala para este breakpoint */
+        .vereador-img-container:hover,
+        .vereador-img-container:focus,
+        .vereador-img-container:active,
+        .vereador-img-container.touch-active {
+          transform: scale(1.35);
+        }
+      }
+      
+      /* Telas em modo paisagem (landscape) */
+      @media (max-height: 500px) and (orientation: landscape) {
+        .vereador-img-container:hover,
+        .vereador-img-container:focus,
+        .vereador-img-container:active,
+        .vereador-img-container.touch-active {
+          transform: scale(1.5);
+        }
+      }
     </style>
   </head>
   <body class="bg-white">
@@ -259,8 +520,209 @@
         </div>
       </div>
     </header>
-    <main class="md:mt-0 mt-24">
-      <section class="py-16 bg-white">
+    
+    <!-- Nova seção de vereadores com carousel infinito -->
+    <section class="py-8 bg-white content-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title">
+          <i class="ri-government-line"></i>
+          Vereadores da Câmara de 2025 a 2028
+        </h2>
+        
+        <!-- Carousel de vereadores -->
+        <div class="owl-carousel owl-theme vereadores-carousel">
+          <!-- Vereador 1 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Aguida Mayara" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">AGUIDA MAYARA</h3>
+                  <p class="vereador-cargo">VEREADORA</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 2 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Eriques Santos" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">ERIQUES SANTOS</h3>
+                  <p class="vereador-cargo">VEREADOR</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 3 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="src/images/vereadores/filipe.jpg" alt="Filipe Rozique" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">FILIPE ROZIQUE</h3>
+                  <p class="vereador-cargo">VEREADOR</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 4 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Jefferson Cardoso" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">JEFFERSON CARDOSO</h3>
+                  <p class="vereador-cargo">VEREADOR</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 5 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=300" alt="João Mendes" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">JOÃO MENDES</h3>
+                  <p class="vereador-cargo">VEREADOR</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 6 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Lano Matias" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">LANO MATIAS</h3>
+                  <p class="vereador-cargo">VEREADOR</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 7 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Lucas Follador" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">LUCAS FOLLADOR</h3>
+                  <p class="vereador-cargo">VEREADOR</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 8 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Rafaela do Batista" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">RAFAELA DO BATISTA</h3>
+                  <p class="vereador-cargo">VEREADORA</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 9 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Renato Padeiro" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">RENATO PADEIRO</h3>
+                  <p class="vereador-cargo">VEREADOR</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 10 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Rosa da Saúde" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">ROSA DA SAÚDE</h3>
+                  <p class="vereador-cargo">VEREADORA</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Vereador 11 -->
+          <div class="item">
+            <div class="vereador-card">
+              <div class="vereador-img-container">
+                <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Tiago Viola" class="vereador-img">
+                <div class="vereador-overlay">
+                  <h3 class="vereador-nome">TIAGO VIOLA</h3>
+                  <p class="vereador-cargo">VEREADOR</p>
+                  <div class="vereador-social">
+                    <a href="#" class="vereador-link"><i class="ri-links-line"></i></a>
+                    <a href="#" class="vereador-link"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <main class="md:mt-0 mt-8">
+      <section class="py-6 bg-white content-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="section-title">
             <i class="ri-shield-check-line"></i>
@@ -295,7 +757,7 @@
           </div>
         </div>
       </section>
-      <section class="py-16 bg-gray-100 md:bg-[#134bc2] bg-blue-theme">
+      <section class="py-16 bg-gray-100 md:bg-[#134bc2] bg-blue-theme content-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="section-title">
             <i class="ri-apps-line"></i>
@@ -462,7 +924,7 @@
           </div>
         </div>
       </section>
-      <section class="py-16 bg-blue-50">
+      <section class="py-16 bg-blue-50 content-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="section-title">
             <i class="ri-newspaper-line"></i>
@@ -549,7 +1011,7 @@
         </div>
       </section>
 
-      <section class="py-16 bg-white">
+      <section class="py-16 bg-white content-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="section-title">
             <i class="ri-user-heart-line"></i>
@@ -656,7 +1118,7 @@
           </div>
         </div>
       </section>
-      <section class="py-16 bg-blue-50">
+      <section class="py-16 bg-blue-50 content-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
             <div class="relative rounded-lg overflow-hidden">
@@ -894,7 +1356,7 @@
       });
     </script>
     
-    <!-- Script para o Owl Carousel com responsividade -->
+    <!-- Script para o Owl Carousel com responsividade e suporte a toque para vereadores -->
     <script>
       $(document).ready(function(){
         $(".noticias-carousel").owlCarousel({
@@ -921,6 +1383,53 @@
             }
           }
         });
+        
+        // Inicialização do carrossel de vereadores
+        $(".vereadores-carousel").owlCarousel({
+          loop: true,
+          margin: 20,
+          stagePadding: 0,
+          nav: true,
+          dots: false,
+          autoplay: true,
+          autoplayTimeout: 6000,
+          autoplayHoverPause: true,
+          smartSpeed: 800,
+          navText: [
+            "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
+            "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
+          ],
+          responsive: {
+            0: {
+              items: 2,
+              margin: 5
+            },
+            480: {
+              items: 3,
+              margin: 5
+            },
+            768: {
+              items: 3,
+              margin: 15
+            },
+            992: {
+              items: 4,
+              margin: 20
+            },
+            1200: {
+              items: 5,
+              margin: 20
+            }
+          }
+        });
+        
+        // Adicionar suporte para toque em dispositivos móveis
+        if('ontouchstart' in window) {
+          $('.vereador-img-container').on('touchstart', function() {
+            $('.vereador-img-container').removeClass('touch-active');
+            $(this).addClass('touch-active');
+          });
+        }
         
         // Função para inicializar ou destruir carrosséis baseado no tamanho da tela
         function gerenciarCarrossel() {
