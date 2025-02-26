@@ -69,9 +69,17 @@
         margin: 0 10px;
       }
       
+      /* Estilo específico para os botões de navegação no Conecta Cidadão */
+      .conecta-cidadao-container.owl-carousel .owl-nav button.owl-prev,
+      .conecta-cidadao-container.owl-carousel .owl-nav button.owl-next {
+        background-color: rgba(255,255,255,0.9) !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      }
+      
       /* Corrigindo o posicionamento das setas de navegação para as classes dos containers */
       .categorias-container.owl-carousel .owl-nav,
-      .servicos-container.owl-carousel .owl-nav {
+      .servicos-container.owl-carousel .owl-nav,
+      .conecta-cidadao-container.owl-carousel .owl-nav {
         text-align: center;
         margin-top: 20px;
         width: 100%;
@@ -94,6 +102,25 @@
       .owl-carousel .categoria-item,
       .owl-carousel .servico-item {
         height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Estilo para os itens de Conecta Cidadão */
+      .owl-carousel .cidadao-item {
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Estilo para os itens de Conecta Transparência no carousel */
+      .owl-carousel .transparencia-container a {
+        height: auto;
+        min-height: 150px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -141,7 +168,8 @@
         
         /* Garantir que as setas dos carrosséis de categorias e serviços permaneçam no centro */
         .categorias-container.owl-carousel .owl-nav,
-        .servicos-container.owl-carousel .owl-nav {
+        .servicos-container.owl-carousel .owl-nav,
+        .conecta-cidadao-container.owl-carousel .owl-nav {
           display: flex;
           justify-content: center;
           margin-top: 20px;
@@ -162,6 +190,15 @@
         
         .bg-blue-theme .section-title i {
           color: #0286f2;
+        }
+        
+        /* Sobrescrever para a seção Conecta Cidadão */
+        .conecta-cidadao-section .section-title {
+          color: white !important;
+        }
+        
+        .conecta-cidadao-section .section-title i {
+          color: white !important;
         }
       }
       
@@ -465,6 +502,12 @@
         .vereador-img-container.touch-active {
           transform: scale(1.5);
         }
+      }
+      
+      /* Ajuste para cor das setas no carousel de Conecta Cidadão */
+      .conecta-cidadao-container.owl-carousel .owl-nav button.owl-prev i,
+      .conecta-cidadao-container.owl-carousel .owl-nav button.owl-next i {
+        color: #4F82ED;
       }
     </style>
   </head>
@@ -804,6 +847,67 @@
       </div>
     </section>
     
+    <!-- Nova seção Conecta Cidadão -->
+    <section class="py-8 content-section conecta-cidadao-section bg-blue-theme" style="background: linear-gradient(to bottom right, #0281f0, #134bc2);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="section-title text-white">
+          <i class="ri-chat-voice-line text-white"></i>
+          Conecta Cidadão
+        </h2>
+        <p class="text-white text-xl mb-6 -mt-4">Faça sua:</p>
+        
+        <!-- Container de cards em grid e carousel para mobile -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 conecta-cidadao-container">
+          <!-- Denúncia -->
+          <a
+            href="#"
+            class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] cidadao-item"
+          >
+            <i class="ri-alarm-warning-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+            <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              Denúncia
+            </h3>
+          </a>
+
+          <!-- Reclamação -->
+          <a
+            href="#"
+            class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] cidadao-item"
+          >
+            <i
+              class="ri-feedback-line text-3xl md:text-4xl mb-3 md:mb-4"
+              style="color: #057ae8"
+            ></i>
+            <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              Reclamação
+            </h3>
+          </a>
+
+          <!-- Elogio -->
+          <a
+            href="#"
+            class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] cidadao-item"
+          >
+            <i class="ri-thumb-up-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+            <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              Elogio
+            </h3>
+          </a>
+
+          <!-- Sugestão -->
+          <a
+            href="#"
+            class="block bg-white rounded-lg shadow-md p-4 md:p-6 text-center transform transition-transform duration-300 hover:scale-105 border-b-4 border-[#057ae8] cidadao-item"
+          >
+            <i class="ri-lightbulb-line text-3xl md:text-4xl mb-3 md:mb-4" style="color: #057ae8"></i>
+            <h3 class="text-sm md:text-base font-semibold text-gray-800">
+              Sugestão
+            </h3>
+          </a>
+        </div>
+      </div>
+    </section>
+    
     <main class="md:mt-0 mt-0">
       <section class="py-6 bg-white content-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -811,7 +915,7 @@
             <i class="ri-shield-check-line"></i>
             Conecta Transparência
           </h2>
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8 transparencia-container">
             <a
               href="portal-diaria.html"
               class="block bg-white rounded-lg shadow-md p-8 text-center transform transition-transform duration-300 hover:scale-105"
@@ -1582,6 +1686,70 @@
                 });
               }, 100);
             }
+            
+            // Inicializar carousel de Conecta Cidadão em telas pequenas
+            if (!$('.conecta-cidadao-container').hasClass('owl-loaded')) {
+              $('.conecta-cidadao-container').addClass('owl-carousel');
+              $('.conecta-cidadao-container').owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: false,
+                navText: [
+                  "<i class='ri-arrow-left-s-line text-white text-3xl'></i>",
+                  "<i class='ri-arrow-right-s-line text-white text-3xl'></i>"
+                ],
+                responsive: {
+                  0: {
+                    items: 2
+                  },
+                  460: {
+                    items: 2
+                  }
+                }
+              });
+              
+              // Garantir que os controles de navegação estejam posicionados corretamente
+              setTimeout(function() {
+                $('.conecta-cidadao-container').find('.owl-nav').css({
+                  'text-align': 'center',
+                  'margin-top': '20px'
+                });
+              }, 100);
+            }
+            
+            // Inicializar carousel de Conecta Transparência em telas pequenas
+            if (!$('.transparencia-container').hasClass('owl-loaded')) {
+              $('.transparencia-container').addClass('owl-carousel');
+              $('.transparencia-container').owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: false,
+                navText: [
+                  "<i class='ri-arrow-left-s-line text-primary text-3xl'></i>",
+                  "<i class='ri-arrow-right-s-line text-primary text-3xl'></i>"
+                ],
+                responsive: {
+                  0: {
+                    items: 1
+                  },
+                  460: {
+                    items: 2
+                  }
+                }
+              });
+              
+              // Garantir que os controles de navegação estejam posicionados corretamente
+              setTimeout(function() {
+                $('.transparencia-container').find('.owl-nav').css({
+                  'text-align': 'center',
+                  'margin-top': '20px'
+                });
+              }, 100);
+            }
           } else {
             // Destruir carrosséis em telas grandes se foram inicializados
             if ($('.categorias-container').hasClass('owl-loaded')) {
@@ -1592,6 +1760,18 @@
             if ($('.servicos-container').hasClass('owl-loaded')) {
               $('.servicos-container').owlCarousel('destroy');
               $('.servicos-container').removeClass('owl-carousel');
+            }
+            
+            // Destruir carousel de Conecta Cidadão em telas grandes
+            if ($('.conecta-cidadao-container').hasClass('owl-loaded')) {
+              $('.conecta-cidadao-container').owlCarousel('destroy');
+              $('.conecta-cidadao-container').removeClass('owl-carousel');
+            }
+            
+            // Destruir carousel de Conecta Transparência em telas grandes
+            if ($('.transparencia-container').hasClass('owl-loaded')) {
+              $('.transparencia-container').owlCarousel('destroy');
+              $('.transparencia-container').removeClass('owl-carousel');
             }
           }
         }

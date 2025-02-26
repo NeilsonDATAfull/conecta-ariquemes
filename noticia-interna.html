@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vereadores participam do Encontro Regional de Ovinocultores - Conecta Ariquemes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Owl Carousel 2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F82ED", secondary: "#4A4A4A" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      
+      @media (max-width: 768px) {
+        body {
+          padding-bottom: 60px; /* Espaço para o menu de navegação inferior */
+        }
+      }
+      
+      /* Estilos para o Owl Carousel */
+      .owl-carousel .owl-nav button.owl-prev,
+      .owl-carousel .owl-nav button.owl-next {
+        width: 40px;
+        height: 40px;
+        background-color: white !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 50%;
+        position: relative;
+        display: inline-block;
+        margin: 0 10px;
+      }
+      
+      .owl-carousel .owl-nav button i {
+        color: #4F82ED;
+      }
+      
+      .owl-carousel .owl-dots .owl-dot span {
+        background-color: #d9e1f8;
+      }
+      
+      .owl-carousel .owl-dots .owl-dot.active span {
+        background-color: #4F82ED;
+      }
+      
+      /* Estilo para títulos de seção padronizados */
+      .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 2rem;
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #1544bd;
+        text-align: left;
+      }
+      
+      .section-title i {
+        margin-right: 0.75rem;
+        color: #0286f2;
+        font-size: 2.25rem;
+      }
+      
+      /* Estilos específicos para a página de notícia */
+      .noticia-conteudo {
+        line-height: 1.8;
+      }
+      
+      .noticia-conteudo p {
+        margin-bottom: 1.5rem;
+      }
+      
+      .noticia-conteudo h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 2rem 0 1rem;
+        color: #1544bd;
+      }
+      
+      .noticia-conteudo ul, .noticia-conteudo ol {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+      }
+      
+      .noticia-conteudo ul li, .noticia-conteudo ol li {
+        margin-bottom: 0.5rem;
+      }
+      
+      .noticia-conteudo img {
+        border-radius: 0.5rem;
+        margin: 1.5rem 0;
+      }
+      
+      .noticia-meta {
+        display: flex;
+        align-items: center;
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+      
+      .noticia-meta i {
+        margin-right: 0.5rem;
+      }
+      
+      .noticia-meta span {
+        margin-right: 1.5rem;
+      }
+      
+      .noticia-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 2rem;
+      }
+      
+      .noticia-tag {
+        background-color: #e9f0ff;
+        color: #1544bd;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+      }
+      
+      /* Ajuste para mobile */
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 1.5rem;
+        }
+        
+        .section-title i {
+          font-size: 1.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <header class="relative">
+      <!-- Header Mobile -->
+      <nav class="bg-gradient-to-r from-[#0286f2] to-[#1544bd] md:hidden transition-all duration-1000 ease-in-out fixed top-0 left-0 right-0 z-50 transform translate-y-0" id="mobile-header">
+        <div class="px-4 py-6">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center">
+              <img src="src/images/logo-white2.svg" alt="Conecta Ariquemes Logo" class="h-6" />
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="w-8 h-8 flex items-center justify-center text-white cursor-pointer">
+                <i class="ri-notification-3-line text-3xl"></i>
+              </div>
+              <button id="mobile-menu-button" class="w-8 h-8 flex items-center justify-center text-white">
+                <i class="ri-menu-line text-3xl" id="menu-icon"></i>
+                <i class="ri-close-line text-3xl hidden" id="close-icon"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Menu Mobile (escondido por padrão) -->
+          <div id="mobile-menu" class="hidden mt-4 pb-2 transition-all duration-1000 ease-in-out">
+            <div class="flex flex-col space-y-3 items-end">
+              <a href="/" class="text-white hover:text-gray-200 text-2xl">Início</a>
+              <a href="#" class="text-white hover:text-gray-200 text-2xl">Sobre</a>
+              <a href="#" class="text-white hover:text-gray-200 text-2xl">Contato</a>
+              <a href="noticia-interna.html" class="text-white hover:text-gray-200 text-2xl">Notícias</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header Desktop -->
+      <nav class="bg-white shadow-sm hidden md:block">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-16">
+            <div class="flex items-center">
+              <img src="src/images/logo2.svg" alt="Conecta Ariquemes Logo" class="h-6" />
+              <div class="hidden md:flex space-x-8 ml-10">
+                <a href="index.html" class="text-[#0061e8] hover:text-primary">Início</a>
+                <a href="#" class="text-[#0061e8] hover:text-primary">Sobre</a>
+                <a href="#" class="text-[#0061e8] hover:text-primary">Contato</a>
+                <a href="noticia-interna.html" class="text-[#0061e8] hover:text-primary">Notícias</a>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="w-8 h-8 flex items-center justify-center text-[#0061e8] hover:text-primary cursor-pointer">
+                <i class="ri-moon-line text-xl"></i>
+              </div>
+              <div class="w-8 h-8 flex items-center justify-center text-[#0061e8] hover:text-primary cursor-pointer">
+                <i class="ri-user-line text-xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main class="md:mt-0 mt-20 pt-4">
+      <!-- Breadcrumb -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center text-sm text-gray-500">
+          <a href="index.html" class="hover:text-primary">Início</a>
+          <i class="ri-arrow-right-s-line mx-2"></i>
+          <a href="#" class="hover:text-primary">Notícias</a>
+          <i class="ri-arrow-right-s-line mx-2"></i>
+          <span class="text-gray-700">Vereadores participam do Encontro Regional de Ovinocultores</span>
+        </div>
+      </div>
+      
+      <!-- Conteúdo da Notícia -->
+      <section class="py-6 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <article>
+            <!-- Título da Notícia -->
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Vereadores participam do Encontro Regional de Ovinocultores de Rondônia
+            </h1>
+            
+            <!-- Metadados da Notícia -->
+            <div class="noticia-meta">
+              <span><i class="ri-calendar-line"></i> 20 Fevereiro 2025</span>
+              <span><i class="ri-user-line"></i> Por: Assessoria de Comunicação</span>
+              <span><i class="ri-eye-line"></i> 342 visualizações</span>
+            </div>
+            
+            <!-- Imagem Principal -->
+            <div class="mb-8">
+              <img src="src/images/noticias/IMG_1.jpg" alt="Vereadores no Encontro Regional de Ovinocultores" class="w-full h-auto rounded-lg object-cover max-h-[500px]" />
+              <p class="text-sm text-gray-500 mt-2">Vereadores durante o Encontro Regional de Ovinocultores de Rondônia, realizado em Ariquemes.</p>
+            </div>
+            
+            <!-- Conteúdo da Notícia -->
+            <div class="noticia-conteudo text-gray-700">
+              <p>
+                Na última quinta-feira (20), vereadores da Câmara Municipal de Ariquemes participaram do Encontro Regional de Ovinocultores de Rondônia, evento que reuniu produtores, técnicos e autoridades para discutir o desenvolvimento da ovinocultura na região.
+              </p>
+              
+              <p>
+                O encontro, realizado no Centro de Eventos da cidade, contou com palestras técnicas, exposição de animais e apresentação de novas tecnologias para o setor. Os vereadores Filipe Rozique, Lucas Follador e Tiago Viola representaram o Legislativo Municipal e destacaram a importância do evento para o fortalecimento da economia local.
+              </p>
+              
+              <h3>Importância para o desenvolvimento regional</h3>
+              
+              <p>
+                Durante sua participação, o vereador Filipe Rozique, presidente da Comissão de Agricultura da Câmara, ressaltou que a ovinocultura representa uma alternativa viável de diversificação para os produtores rurais do município.
+              </p>
+              
+              <p>
+                "A criação de ovinos tem crescido significativamente em nossa região nos últimos anos. Este encontro é fundamental para que os produtores possam trocar experiências, conhecer novas técnicas e fortalecer a cadeia produtiva", afirmou o vereador.
+              </p>
+              
+              <p>
+                Já o vereador Lucas Follador destacou a necessidade de políticas públicas que incentivem o setor:
+              </p>
+              
+              <p>
+                "Precisamos criar mecanismos que facilitem o acesso dos produtores a linhas de crédito específicas e assistência técnica especializada. A Câmara Municipal está comprometida em trabalhar por legislações que apoiem o desenvolvimento da ovinocultura em Ariquemes", declarou.
+              </p>
+              
+              <h3>Parcerias e projetos futuros</h3>
+              
+              <p>
+                Durante o evento, foram discutidas possíveis parcerias entre o poder público municipal, produtores e entidades do setor para a implementação de projetos que visam fortalecer a cadeia produtiva da ovinocultura na região.
+              </p>
+              
+              <p>
+                O vereador Tiago Viola anunciou que apresentará na próxima sessão da Câmara um projeto de lei que visa criar o programa "Ariquemes Ovino", com o objetivo de oferecer suporte técnico e incentivos fiscais aos produtores do município.
+              </p>
+              
+              <p>
+                "Estamos trabalhando para que Ariquemes se torne referência na criação de ovinos em Rondônia. Este programa será um passo importante para estruturarmos melhor o setor e atrairmos novos investimentos", explicou o vereador.
+              </p>
+              
+              <h3>Próximas ações</h3>
+              
+              <p>
+                Ao final do encontro, ficou definida a criação de um grupo de trabalho, composto por representantes do Legislativo, produtores e técnicos, para elaborar um plano de desenvolvimento da ovinocultura no município.
+              </p>
+              
+              <p>
+                A próxima reunião do grupo está agendada para o dia 15 de março, quando serão apresentadas as primeiras propostas de ações para o fortalecimento do setor.
+              </p>
+              
+              <!-- Tags da Notícia -->
+              <div class="noticia-tags">
+                <span class="noticia-tag">Ovinocultura</span>
+                <span class="noticia-tag">Agricultura</span>
+                <span class="noticia-tag">Desenvolvimento Rural</span>
+                <span class="noticia-tag">Vereadores</span>
+              </div>
+            </div>
+            
+            <!-- Compartilhamento -->
+            <div class="mt-8 pt-6 border-t border-gray-200">
+              <h4 class="text-lg font-semibold mb-4">Compartilhe esta notícia</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                  <i class="ri-facebook-fill"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center text-white">
+                  <i class="ri-twitter-x-fill"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white">
+                  <i class="ri-whatsapp-fill"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-white">
+                  <i class="ri-linkedin-fill"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      
+      <!-- Notícias Relacionadas -->
+      <section class="py-12 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="section-title">
+            <i class="ri-newspaper-line"></i>
+            Notícias Relacionadas
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+              <a href="noticia-interna.html">
+                <img
+                  src="src/images/noticias/IMG_2.jpg"
+                  alt="Vereadores aprovam proposituras"
+                  class="w-full h-48 object-cover"
+                />
+              </a>
+              <div class="p-6">
+                <a href="noticia-interna.html" class="hover:text-primary">
+                  <h3 class="font-semibold mb-2">
+                    Vereadores aprovam cinco proposituras durante a Sessão Ordinária
+                  </h3>
+                </a>
+                <p class="text-gray-600 mb-4">18 Fevereiro 2025</p>
+                <a href="noticia-interna.html" class="text-primary hover:underline !rounded-button inline-block">
+                  Saiba mais
+                </a>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+              <a href="noticia-interna.html">
+                <img
+                  src="src/images/noticias/IMG_3.jpg"
+                  alt="Comissões Permanentes"
+                  class="w-full h-48 object-cover"
+                />
+              </a>
+              <div class="p-6">
+                <a href="noticia-interna.html" class="hover:text-primary">
+                  <h3 class="font-semibold mb-2">
+                    Vereadores definem composição das Comissões Permanentes para 2025
+                  </h3>
+                </a>
+                <p class="text-gray-600 mb-4">04 Fevereiro 2025</p>
+                <a href="noticia-interna.html" class="text-primary hover:underline !rounded-button inline-block">
+                  Saiba mais
+                </a>
+              </div>
+            </div>
+            
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full">
+              <a href="noticia-interna.html">
+                <img
+                  src="src/images/noticias/IMG_1.jpg"
+                  alt="Audiência pública"
+                  class="w-full h-48 object-cover"
+                />
+              </a>
+              <div class="p-6">
+                <a href="noticia-interna.html" class="hover:text-primary">
+                  <h3 class="font-semibold mb-2">
+                    Câmara promove audiência pública sobre segurança municipal
+                  </h3>
+                </a>
+                <p class="text-gray-600 mb-4">15 Fevereiro 2025</p>
+                <a href="noticia-interna.html" class="text-primary hover:underline !rounded-button inline-block">
+                  Saiba mais
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="bg-[#0f59bf] text-white/80 py-12 hidden md:block">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="text-2xl mb-4">Gabnet</div>
+            <p class="">
+              Portal do Cidadão é uma plataforma de serviços e informações do
+              município de Ariquemes-RO.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-black">Sobre Nós</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Contato</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Localização</h3>
+            <ul class="space-y-2">
+              <li class="flex items-center0">
+                <i class="ri-map-pin-line mr-2"></i>
+                Rua Cassiterita, 1.369 - Centro - Ariquemes - RO
+              </li>
+              <li class="flex items-center">
+                <i class="ri-phone-line mr-2"></i>
+                (69) 3536-6103 / 3535-3261
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line mr-2"></i>
+                contato@moveis.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-b-white">
+          <p class="text-center">
+            &copy; 2025 GABNET. Desenvolvido por
+            <a
+              href="https://www.datafull.com.br/"
+              target="_blank"
+              class="text-white hover:underline"
+              >DATAfull</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Mobile Bottom Navigation -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#1544bd] to-[#0286f2] p-4 flex items-center justify-between md:hidden z-50"
+    >
+      <a href="index.html" class="text-white flex flex-col items-center">
+        <i class="ri-home-2-line text-4xl"></i>
+        <span class="text-xs mt-1">Início</span>
+      </a>
+      <a href="noticia-interna.html" class="text-white flex flex-col items-center">
+        <i class="ri-news-line text-4xl"></i>
+        <span class="text-xs mt-1">Notícias</span>
+      </a>
+      <button
+        class="bg-gradient-to-r from-[#086FDE] to-[#0F57CB] text-white p-4 rounded-full -mt-14 shadow-lg"
+      >
+        <i class="ri-search-line text-white text-4xl"></i>
+      </button>
+      <a href="#" class="text-white flex flex-col items-center">
+        <i class="ri-map-pin-line text-4xl"></i>
+        <span class="text-xs mt-1">Mapa</span>
+      </a>
+      <a href="#" class="text-white flex flex-col items-center">
+        <i class="ri-user-line text-4xl"></i>
+        <span class="text-xs mt-1">Entrar</span>
+      </a>
+    </nav>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" class="fixed bottom-24 right-4 z-50 bg-gradient-to-r from-[#0286f2] to-[#1544bd] w-12 h-12 rounded-full flex items-center justify-center shadow-lg md:bottom-8 md:right-8">
+      <i class="ri-arrow-up-line text-white text-2xl"></i>
+    </button>
+
+    <!-- Script para o menu mobile -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileHeader = document.getElementById('mobile-header');
+        
+        // Função para abrir o menu com animação suave
+        function openMenu() {
+          menuIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          mobileMenu.classList.remove('hidden');
+          
+          // Ajusta a altura do header
+          mobileHeader.classList.add('pb-4');
+          
+          // Pequeno timeout para permitir que a transição funcione após remover o hidden
+          setTimeout(() => {
+            mobileMenu.classList.add('opacity-100');
+          }, 10);
+        }
+        
+        // Função para fechar o menu com animação suave
+        function closeMenu() {
+          mobileMenu.classList.remove('opacity-100');
+          
+          // Aguardar a animação terminar antes de esconder completamente
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            mobileHeader.classList.remove('pb-4');
+          }, 500); // Mesmo tempo que a duração da transição
+        }
+        
+        menuButton.addEventListener('click', function() {
+          if (mobileMenu.classList.contains('hidden')) {
+            openMenu();
+          } else {
+            closeMenu();
+          }
+        });
+
+        // Controle do header ao rolar a página
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          // Se estiver no topo da página, sempre mostre o header
+          if (scrollTop <= 10) {
+            mobileHeader.classList.remove('-translate-y-full');
+            mobileHeader.classList.add('translate-y-0');
+            return;
+          }
+          
+          // Rolando para baixo
+          if (scrollTop > lastScrollTop) {
+            mobileHeader.classList.remove('translate-y-0');
+            mobileHeader.classList.add('-translate-y-full');
+          } 
+          // Rolando para cima
+          else {
+            mobileHeader.classList.remove('-translate-y-full');
+            mobileHeader.classList.add('translate-y-0');
+          }
+          
+          lastScrollTop = scrollTop;
+        });
+
+        // Funcionalidade do botão voltar ao topo
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        // Mostrar/esconder o botão dependendo da posição da página
+        window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('hidden');
+          } else {
+            backToTopButton.classList.add('hidden');
+          }
+        });
+        
+        // Inicialmente oculto
+        backToTopButton.classList.add('hidden');
+        
+        // Ação de voltar ao topo ao clicar
+        backToTopButton.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html> 
